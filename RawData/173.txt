@@ -1,0 +1,415 @@
+Block,Director,DomTargetAnimal,DomTargetNumber,DomTargetMotion,DomTargetDescription,DomTypedDescription,DomError,SubTargetAnimal,SubTargetNumber,SubTargetMotion,SubTargetDescription,SubTypedDescription,SubError,LegalDescription,MatcherArray1,MatcherArray2,MatcherArray3,MatcherArray4,MatcherArray5,MatcherArray6,MatcherArray7,MatcherArray8,MatcherSelectionI,MatcherSelectionAnimal,MatcherSelectionNumber,MatcherSelectionMotion,Score
+VocabTraining,NA,6,1,0,fino,fino,0.000000,3,1,0,hoppo,frog,1.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTraining,NA,1,1,0,beeko,beeko,0.000000,6,1,0,fino,shark,1.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTraining,NA,3,1,0,hoppo,hoppo,0.000000,2,1,0,trunko,elephant,1.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTraining,NA,2,1,0,trunko,trunko,0.000000,4,1,0,bugo,bugo,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTraining,NA,5,1,0,oinko,oinko,0.000000,5,1,0,oinko,oinko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTraining,NA,4,1,0,bugo,bugo,0.000000,1,1,0,beeko,beeko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTraining,NA,4,1,0,bugo,bugo,0.000000,5,1,0,oinko,NULL,1.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTraining,NA,3,1,0,hoppo,hoppo,0.000000,6,1,0,fino,fino,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTraining,NA,2,1,0,trunko,trunko,0.000000,1,1,0,beeko,beeko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTraining,NA,1,1,0,beeko,beeko,0.000000,2,1,0,trunko,trunko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTraining,NA,6,1,0,fino,fino,0.000000,4,1,0,bugo,bugo,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTraining,NA,5,1,0,oinko,oinko,0.000000,3,1,0,hoppo,hoppo,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTraining,NA,1,1,0,beeko,beeko,0.000000,3,1,0,hoppo,hoppo,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTraining,NA,6,1,0,fino,fino,0.000000,6,1,0,fino,fino,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTraining,NA,5,1,0,oinko,oinko,0.000000,2,1,0,trunko,trunko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTraining,NA,3,1,0,hoppo,hoppo,0.000000,4,1,0,bugo,bugo,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTraining,NA,2,1,0,trunko,trunko,0.000000,1,1,0,beeko,beeko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTraining,NA,4,1,0,bugo,bugo,0.000000,5,1,0,oinko,oinko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTraining,NA,6,1,0,fino,fino,0.000000,3,1,0,hoppo,hoppo,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTraining,NA,5,1,0,oinko,oinko,0.000000,5,1,0,oinko,oinko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTraining,NA,4,1,0,bugo,bugo,0.000000,1,1,0,beeko,beeko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTraining,NA,2,1,0,trunko,trunko,0.000000,6,1,0,fino,fino,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTraining,NA,1,1,0,beeko,beeko,0.000000,2,1,0,trunko,trunko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTraining,NA,3,1,0,hoppo,hoppo,0.000000,4,1,0,bugo,bugo,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTesting,NA,2,1,0,NA,trunko,NA,3,1,0,NA,jumpo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTesting,NA,6,1,0,NA,fino,NA,2,1,0,NA,trunko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTesting,NA,4,1,0,NA,bugo,NA,1,1,0,NA,beeko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTesting,NA,1,1,0,NA,beeko,NA,4,1,0,NA,bugo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTesting,NA,3,1,0,NA,hoppo,NA,6,1,0,NA,fino,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+VocabTesting,NA,5,1,0,NA,oinko,NA,5,1,0,NA,oinko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,4,1,2,boingla bugo wib,boingla,0.562500,4,2,2,boingla bugo pag,boingla bugo pas,0.062500,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,3,2,2,boingla hoppo pag,boinglo hoppo pag,0.058824,4,2,1,wooshla bugo pag,wooshla bugo pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,4,2,1,wooshla bugo pag,wooshla buggo pag,0.058824,3,1,2,boingla hoppo,boingla hoppo,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,1,2,2,boingla beeko pag,boinglo beeka pag,0.117647,2,2,1,wooshla trunko pag,wooshla trunko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,3,1,1,wooshla hoppo,wooshla hoppo,0.000000,4,1,1,wooshla bugo wib,wooshla bugo wib,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,1,1,2,boingla beeko wib,boingla beeko wit,0.058824,6,2,2,boingla fino pag,boingla fino pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,1,2,1,wooshla beeko pag,wooshla beeko pag,0.000000,6,2,1,wooshla fino pag,wooshla fino pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,2,1,2,boingla trunko,boingla trunko,0.000000,1,1,1,wooshla beeko,wooshla beeko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,2,2,2,boingla trunko pag,boingla trunko pag,0.000000,4,1,2,boingla bugo,boingla bugo,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,2,2,1,wooshla trunko pag,wooshla trunko pag,0.000000,5,1,2,boingla oinko wib,boingla oinko wib,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,6,1,1,wooshla fino wib,wooshla fino wib,0.000000,2,1,1,wooshla trunko,wooshla trunko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,4,1,1,wooshla bugo wib,wooshla bugo wib,0.000000,2,1,2,boingla trunko,boingla trunko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,6,1,2,boingla fino wib,boingla fino wib,0.000000,5,2,1,wooshla oinko pag,wooshla oinko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,3,1,2,boingla hoppo,boinglo hoppo,0.076923,2,2,2,boingla trunko pag,boingla trunko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,6,2,1,wooshla fino pag,wooshla fino pag,0.000000,3,2,2,boingla hoppo pag,boingla hoppo pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,5,1,1,wooshla oinko,wooshla oinko,0.000000,1,2,2,boingla beeko pag,boingla beeko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,4,2,2,boingla bugo pag,boingla bugo pag,0.000000,5,1,1,wooshla oinko,woosha oinko,0.076923,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,3,2,1,wooshla hoppo pag,wooshla hoppo pag,0.000000,1,1,2,boingla beeko wib,boingla beeko wib,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,5,1,2,boingla oinko wib,boingla oinko wib,0.000000,6,1,1,wooshla fino,wooshla fino,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,1,1,1,wooshla beeko wib,wooshla beeko wib,0.000000,5,2,2,boingla oinko pag,boingla oinko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,6,2,2,boingla fino pag,boingla fino pag,0.000000,6,1,2,boingla fino,boingla fino,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,2,1,1,wooshla trunko wib,wooshlo trunko wib,0.055556,3,2,1,wooshla hoppo pag,wooshla hoppo pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,5,2,1,wooshla oinko pag,wooshla oinko wib,0.176471,1,2,1,wooshla beeko pag,wooshla beeko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,5,2,2,boingla oinko pag,boingla oinko pag,0.000000,3,1,1,wooshla hoppo wib,wooshla hoppo wib,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,6,2,2,boingla fino pag,boingla fino pag,0.000000,6,1,1,wooshla fino,wooshla fino,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,3,1,2,boingla hoppo wib,boingla hoppo wib,0.000000,4,2,2,boingla bugo pag,boingla bugo pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,4,2,1,wooshla bugo pag,wooshlo bugo pag,0.062500,4,2,1,wooshla bugo pag,woosho bugo pag,0.125000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,5,1,2,boingla oinko wib,boingla oinko wib,0.000000,5,2,1,wooshla oinko pag,wooshla oinko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,1,1,2,boingla beeko wib,boingla beeko wib,0.000000,2,2,1,wooshla trunko pag,wooshla trunko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,2,1,2,boingla trunko,boingla trunko,0.000000,1,2,1,wooshla beeko pag,wooshla beeko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,3,1,1,wooshla hoppo wib,wooshla hoppo wib,0.000000,2,1,2,boingla trunko,boingla trunko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,2,2,2,boingla trunko pag,boingla trunko pag,0.000000,3,2,2,boingla hoppo pag,boingla hoppo pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,1,2,1,wooshla beeko pag,wooshla beeko pag,0.000000,3,1,2,boingla hoppo wib,boingla hoppo wib,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,2,1,1,wooshla trunko,wooshla trunko,0.000000,5,1,2,boingla oinko,boingla oinko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,4,1,2,boingla bugo,boingla bugo,0.000000,4,1,1,wooshla bugo,wooshla bugo,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,1,2,2,boingla beeko pag,boingla beeko pag,0.000000,1,2,2,boingla beeko pag,boingla beeko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,5,2,2,boingla oinko pag,boingla oinko pag,0.000000,6,1,2,boingla fino wib,boingla fino wib,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,3,2,1,wooshla hoppo pag,wooshla hoppo pag,0.000000,3,1,1,wooshla hoppo,wooshla hoppo,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,5,1,1,wooshla oinko wib,wooshla oinko wib,0.000000,6,2,1,wooshla fino pag,wooshla fino pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,4,2,2,boingla bugo pag,boingla bugo pag,0.000000,1,1,1,wooshla beeko,wooshla beeko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,6,2,1,wooshla fino pag,wooshla fino pag,0.000000,2,2,2,boingla trunko pag,boingla trunko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,6,1,2,boingla fino wib,boinga fino wib,0.062500,5,2,2,boingla oinko pag,boingla oinko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,3,2,2,boingla hoppo pag,boingla hoppo pah,0.058824,2,1,1,wooshla trunko wib,wooshla trunko wib,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,1,1,1,wooshla beeko wib,wooshla beeko wib,0.000000,1,1,2,boingla beeko,boingla beeko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,5,2,1,wooshla oinko pag,wooshla oinko pag,0.000000,4,1,2,boingla bugo,boingla bugo,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,2,2,1,wooshla trunko pag,wooshla trunko pag,0.000000,5,1,1,wooshla oinko wib,wooshla oinko pib,0.058824,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,6,1,1,wooshla fino wib,wooshla fino wab,0.062500,3,2,1,wooshla hoppo pag,wooshla hoppo pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,4,1,1,wooshla bugo,wooshla bugo,0.000000,6,2,2,boingla fino pag,boingla fino pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,2,1,2,boingla trunko wib,boingla trunko wib,0.000000,3,1,1,wooshla hoppo,wooshla hoppo,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,5,1,2,boingla oinko wib,boingla oinko wib,0.000000,3,2,1,wooshla hoppo pag,wooshla hoppo pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,3,2,1,wooshla hoppo pag,wooshla hoppo pag,0.000000,1,1,1,wooshla beeko, beeko,0.538462,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,2,2,2,boingla trunko pag,boingla trunko pag,0.000000,5,1,1,wooshla oinko,wooshla oinko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,4,1,2,boingla bugo,boingla bugo,0.000000,4,1,2,boingla bugo,boingla bugo,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,4,2,1,wooshla bugo pag,wooshla bugp pag,0.062500,2,2,2,boingla trunko pag,boingla trunko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,3,1,2,boingla hoppo wib,boingla hoppo wig,0.058824,2,1,1,wooshla trunko wib,wooshla trunko wib,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,5,2,2,boingla oinko pag,boingla oinko wib,0.176471,1,2,2,boingla beeko pag,boingla beeko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,3,2,2,boingla hoppo pag,boingla hoppo pag,0.000000,3,2,2,boingla hoppo pag,boingla hoppo pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,2,2,1,wooshla trunko pag,wooshla trunko pag,0.000000,5,2,2,boingla oinko pag,boingla oinko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,2,1,1,wooshla trunko wib,wooshla trunko wib,0.000000,4,2,1,wooshla bugo pag,wooshla bugo pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,6,1,2,boingla fino,boingla fino,0.000000,6,2,1,wooshla fino pag,wooshla fino pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,3,1,1,wooshla hoppo wib,wooshla hoppo wib,0.000000,6,2,2,boingla fino pag,boingla fino pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,4,1,1,wooshla bugo wib,wooshla bugo wib,0.000000,2,2,1,wooshla trunko pag,wooshla trunko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,4,2,2,boingla bugo pag,boingla bugo wib,0.187500,6,1,1,wooshla fino wib,wooshla fino pib,0.062500,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,5,2,1,wooshla oinko pag,wooshla oinko pag,0.000000,1,1,2,boingla beeko,boingla beeko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,6,2,2,boingla fino pag,boingla fino pag,0.000000,5,1,2,boingla oinko wib,boingla oinko wib,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,1,2,1,wooshla beeko pag,wooshla beeko pag,0.000000,4,1,1,wooshla bugo,wooshla bugo,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,1,1,2,boingla beeko wib,boingla beeko wib,0.000000,4,2,2,boingla bugo pag,boingla bugo pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,1,1,1,wooshla beeko,wooshla beeko,0.000000,1,2,1,wooshla beeko pag,wooshla beeko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,5,1,1,wooshla oinko,wooshla oinko,0.000000,3,1,2,boingla hoppo,boingla hoppo,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,1,2,2,boingla beeko pag,boingla beeko pag,0.000000,2,1,2,boingla trunko wib,boingla trunko wib,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,6,2,1,wooshla fino pag,wooshla fino pag,0.000000,5,2,1,wooshla oinko pag,wooshla oinko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,6,1,1,wooshla fino wib,wooshla fino wib,0.058824,6,1,2,boingla fino,boingla fino,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,2,2,2,boingla trunko pag,boingla trunko fib,0.166667,3,2,2,boingla hoppo pag,boingla hoppo pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,6,1,1,wooshla fino wib,wooshla fino wib,0.000000,4,1,2,boingla bugo wib,boingla bugo wib,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,6,1,2,boingla fino wib,boingla fino wib,0.000000,3,2,1,wooshla hoppo pag,wooshla hoppo pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,4,1,1,wooshla bugo wib,wooshla bugo wib,0.000000,4,1,1,wooshla bugo,wooshla bugo,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,4,2,1,wooshla bugo pag,wooshal bugo pag,0.125000,2,1,1,wooshla trunko,wooshla trunko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,4,2,2,boingla bugo pag,boingla bugo pag,0.000000,5,2,1,wooshla oinko pag,wooshla oiko pag,0.058824,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,1,1,2,boingla beeko,boingla beeko,0.000000,4,2,2,boingla bugo pag,boingla bugo pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,2,1,2,boingla trunko wib,boingla trunko wib,0.000000,2,2,1,wooshla trunko pag,wooshla trunko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,3,1,2,boingla hoppo wib,boingla hoppo wib,0.000000,3,1,2,boingla hoppo wib,boingla hoppo wib,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,2,1,1,wooshla trunko,wooshla trunko,0.000000,1,1,1,wooshla beeko,wooshla beeko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,4,1,2,boingla bugo wib,boingla bugo wib,0.000000,6,2,1,wooshla fino pag,wooshla fino pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,3,2,1,wooshla hoppo pag,wooshla hoppo wib,0.176471,5,1,2,boingla oinko,boingla oinko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,5,2,2,boingla oinko pag,boingla oinko pag,0.000000,5,2,2,boingla oinko pag,boingla oinko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,5,1,1,wooshla oinko wib,wooshla oinko wib,0.000000,6,2,2,boingla fino pag,boingla fino pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,5,1,2,boingla oinko,boingla oinko,0.000000,2,2,2,boingla trunko pag,boingla trunko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,2,2,1,wooshla trunko pag,wooshla trunko pag,0.052632,1,2,1,wooshla beeko pag,wooshla beeko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,3,1,1,wooshla hoppo,wooshla hoppo,0.000000,6,1,2,boingla fino,boingla fino,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,5,2,1,wooshla oinko pag,wooshla oinko pag,0.000000,4,2,1,wooshla bugo pag,wooshla bugo pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,3,2,2,boingla hoppo pag,boingla hoppo pag,0.000000,3,1,1,wooshla hoppo wib,wooshla hoppo wib,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,6,2,1,wooshla fino pag,wooshla fino pag,0.000000,1,2,2,boingla beeko pag,boingla beeko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,1,1,1,wooshla beeko wib,wooshla beeko wib,0.000000,6,1,1,wooshla fino wib,wooshla fino wib,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,6,2,2,boingla fino pag,boingla fino pag,0.000000,1,1,2,boingla beeko,boingla beeko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,1,2,1,wooshla beeko pag,wooshla beeko pag,0.000000,5,1,1,wooshla oinko,wooshla oinko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,1,2,2,boingla beeko pag,boingla beeko pag,0.000000,2,1,2,boingla trunko,boingla trunko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,1,2,2,boingla beeko pag,boingla beeko pag,0.000000,4,2,2,boingla bugo pag,boingla bugo pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,1,2,1,wooshla beeko pag,wooshla beeko pag,0.000000,2,2,1,wooshla trunko pag,whooshla truno pag,0.111111,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,1,1,1,wooshla beeko,wooshla beeko,0.000000,3,2,2,boingla hoppo pag,boingla hoppo pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,6,2,2,boingla fino pag,boingla fino pag,0.000000,3,1,2,boingla hoppo,oingla hoppo,0.076923,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,3,2,2,boingla hoppo pag,boingla hoppo pag,0.000000,1,2,1,wooshla beeko pag,wooshla beeko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,5,1,1,wooshla oinko wib,wooshla oinko wib,0.000000,1,1,2,boingla beeko,boingla beeko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,5,2,1,wooshla oinko pag,wooshla oinko pag,0.000000,1,2,2,boingla beeko pag,boingla beeko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,4,1,2,boingla bugo wib,boingla bugo wib,0.000000,6,1,1,wooshla fino,wooshla fino,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,3,1,1,wooshla hoppo wib,wooshla hoppo wib,0.000000,6,1,2,boingla fino wib,boingla fino wib,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,4,1,1,wooshla bugo wib,wooshla bugo wib,0.000000,2,1,1,wooshla trunko,wooshla trunko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,4,2,2,boingla bugo pag,boingla bugo pag,0.000000,6,2,2,boingla fino pag,boingla fino pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,5,1,2,boingla oinko wib,boingla oinko wib,0.000000,4,1,2,boingla bugo,boingla bugo,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,5,2,2,boingla oinko pag,boingla oinko pag,0.000000,3,2,1,wooshla hoppo pag,wooshla hoppo pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,2,2,1,wooshla trunko pag,wooshla trunko pag,0.000000,6,2,1,wooshla fino pag,wooshla fino pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,6,1,2,boingla fino,boingla fino,0.000000,5,1,1,wooshla oinko wib,wooshla oinko wib,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,1,1,2,boingla beeko,boingla beeko,0.000000,4,2,1,wooshla bugo pag,wooshla bugo pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,2,2,2,boingla trunko pag,boingla trunkp pag,0.055556,2,1,2,boingla trunko wib,boingla trunko wib,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,3,1,2,boingla hoppo wib,boingla hoppo wib,0.000000,4,1,1,wooshla bugo,wooshla bugo,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,2,1,1,wooshla trunko wib,wooshla trunko wib,0.000000,5,1,2,boingla oinko,boingla oinko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,4,2,1,wooshla bugo pag,wooshla bugo pag,0.000000,3,1,1,wooshla hoppo,wooshla hoppo,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,3,2,1,wooshla hoppo pag,wooshla hoppo pag,0.000000,5,2,2,boingla oinko pag,boingla oinko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,2,1,2,boingla trunko wib,boingla trunko wib,0.000000,1,1,1,wooshla beeko wib,wooshla beeko wib,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,6,1,1,wooshla fino,wooshla trunko,0.333333,2,2,2,boingla trunko pag,boingla trunko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,6,2,1,wooshla fino pag,wooshla fino pag,0.000000,5,2,1,wooshla oinko pag,wooshla oinko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,1,2,2,boingla beeko pag,boingla beeko pag,0.000000,5,1,1,wooshla oinko,wooshla oinko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,3,1,1,wooshla hoppo wib,wooshla hoppo wib,0.000000,6,1,2,boingla fino,boingla fino,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,2,2,1,wooshla trunko pag,wooshla trunko pag,0.000000,5,1,2,boingla oinko,biongla oinko,0.153846,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,4,1,1,wooshla bugo,wooshla bugo,0.000000,2,1,2,boingla trunko,boingla trunko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,5,2,2,boingla oinko pag,boingla oinko pag,0.000000,6,2,2,boingla fino pag,boingla fino pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,2,1,2,boingla trunko wib,boingla trunko wib,0.000000,5,2,2,boingla oinko pag,boingla oinko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,1,1,2,boingla beeko wib,boingla beeko wib,0.000000,6,2,1,wooshla fino pag,wooshla fino pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,6,1,1,wooshla fino,wooshla finp,0.083333,1,1,1,wooshla beeko wib,wooshla beeko wib,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,5,2,1,wooshla oinko pag,wooshla oinko pag,0.000000,4,1,1,wooshla bugo wib,wooshla bugo wib,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,5,1,2,boingla oinko,boingla oinko,0.000000,3,1,1,wooshla hoppo,wooshla hoppo,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,5,1,1,wooshla oinko wib,wooshla oinko wib,0.000000,2,1,1,wooshla trunko,wooshla trunko,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,6,2,1,wooshla fino pag,wooshla fino pag,0.000000,4,2,1,wooshla bugo pag,wooshla bugo pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,3,2,1,wooshla hoppo pag,wooshla hoppo pag,0.000000,4,1,2,boingla bugo wib,boingla bugo wib,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,6,2,2,boingla fino pag,boingla fino pag,0.000000,1,2,2,boingla beeko pag,boingla beeko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,4,1,2,boingla bugo wib,boingla bugo wib,0.000000,2,2,1,wooshla trunko pag,wooshla trunko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,1,2,1,wooshla beeko pag,wooshla bugo wib,0.352941,1,1,2,boingla beeko wib,boingla beeko wib,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,4,2,1,wooshla bugo pag,wooshla bugo pag,0.000000,6,1,1,wooshla fino,wooshla fino,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,2,2,2,boingla trunko pag,boingla trunko pag,0.000000,3,2,2,boingla hoppo pag,boingla hoppo pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,2,1,1,wooshla trunko wib,wooshla trunko wib,0.000000,3,1,2,boingla hoppo,boingla hoppo,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,4,2,2,boingla bugo pag,boingla bugo pag,0.000000,5,2,1,wooshla oinko pag,wooshla oinko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,6,1,2,boingla fino wib,boingla fino wib,0.000000,3,2,1,wooshla hoppo pag,wooshla hoppo pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,3,2,2,boingla hoppo pag,boingla hoppo pag,0.000000,1,2,1,wooshla beeko pag,wooshla beeko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,1,1,1,wooshla beeko wib,wooshla beeko wib,0.000000,4,2,2,boingla bugo pag,boingla bugo pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Training,NA,3,1,2,boingla hoppo,boingla hoppo,0.000000,2,2,2,boingla trunko pag,boingla trunko pag,0.000000,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,2,1,1,NA,wooshla trunko,NA,4,1,2,NA,boingla bugo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,4,2,1,NA,wooshla bugo wib,NA,1,2,1,NA,wooshla beeko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,5,2,1,NA,wooshla oinko pag,NA,2,1,1,NA,wooshla trunko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,3,2,2,NA,boingla hoppo wib,NA,1,1,1,NA,wooshla beeko wib,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,1,1,1,NA,wooshla beeko,NA,3,1,2,NA,boingla jumpo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,6,1,1,NA,wooshla fino,NA,4,2,1,NA,wooshla bugo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,3,1,2,NA,boingla hoppo,NA,6,1,1,NA,wooshla fino,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,5,1,1,NA,wooshla oinko,NA,5,2,1,NA,wooshla oinko wib,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,2,1,2,NA,boingla trunko,NA,5,1,1,NA,wooshla oinko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,1,2,1,NA,wooshla beeko pag,NA,2,2,2,NA,boingla trunkio pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,1,1,2,NA,boingla beeko,NA,4,2,2,NA,boingla bugo pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,5,2,2,NA,boingla hoppo pag,NA,5,1,2,NA,boingla oinko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,4,2,2,NA,boingla bugo wib,NA,6,2,1,NA,wooshla fino pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,6,2,1,NA,wooshla fino pag,NA,3,1,1,NA,wooshla jumpo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,2,2,1,NA,wooshla trunko pag,NA,6,1,2,NA,boingla fino,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,1,2,2,NA,boingla beeko pag,NA,1,2,2,NA,boingla beeko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,2,2,2,NA,boingla trunko pag,NA,3,2,2,NA,boingla jumpo pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,6,2,2,NA,boingla fino wib,NA,6,2,2,NA,boingla fino pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,4,1,1,NA,wooshla bugo,NA,5,2,2,NA,boingla oinko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,3,2,1,NA,wooshla hoppo wib,NA,2,1,2,NA,boingla trunko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,6,1,2,NA,boingla fino,NA,1,1,2,NA,boingla beeko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,5,1,2,NA,boingla oinko,NA,2,2,1,NA,wooshla trunko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,3,1,1,NA,wooshla hoppo,NA,3,2,1,NA,wooshla jumpo pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,4,1,2,NA,boingla bugo,NA,4,1,1,NA,wooshla bugo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,6,2,2,NA,boingla fino pag,NA,4,2,2,NA,Boingla bugo pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,1,1,2,NA,boingla beekp,NA,2,1,2,NA,boingla trunko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,6,1,2,NA,boingla fino,NA,1,1,2,NA,boingla beeko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,2,2,1,NA,wooshla trunko pag,NA,2,2,1,NA,wooshla trunko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,3,2,1,NA,wooshla hoppo wib,NA,4,1,1,NA,wooshla bugo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,1,2,2,NA,boingla beeko wib,NA,3,1,1,NA,wooshla jumpo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,4,1,2,NA,boingla bugo,NA,1,1,1,NA,wooshla beeko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,5,1,2,NA,boingla oinko,NA,3,2,2,NA,boingla jumpo pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,4,2,1,NA,wooshla bugo wib,NA,3,2,1,NA,wooshla jumpo pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,5,2,2,NA,boingla oinko pag,NA,6,1,1,NA,wooshla fino wib,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,1,2,1,NA,wooshla beeko wib,NA,6,1,2,NA,boingla fino,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,4,1,1,NA,wooshla bugo,NA,5,2,2,NA,boingla oinko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,5,2,1,NA,wooshla oinko fib,NA,2,2,2,NA,boingla trunko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,3,1,1,NA,wooshla hoppo,NA,3,1,2,NA,boingla jumpo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,2,1,2,NA,boingla trunko,NA,5,1,2,NA,boingla oinko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,2,2,2,NA,boingla trunko wib,NA,5,2,1,NA,wooshla oinko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,3,1,2,NA,boingla hoppo,NA,4,1,2,NA,boingla bugo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,6,1,1,NA,wooshla fino,NA,1,2,1,NA,wooshla beeko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,6,2,1,NA,wooshla fino wib,NA,4,2,1,NA,wooshla bugo pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,2,1,1,NA,wooshla trunko,NA,2,1,1,NA,wooshla trunko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,5,1,1,NA,wooshla oinko,NA,5,1,1,NA,wooshla oinko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,4,2,2,NA,boingla bugo pag,NA,6,2,1,NA,wooshla fino pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,3,2,2,NA,boingla hoppo pag,NA,6,2,2,NA,boingla fino pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,1,1,1,NA,wooshla beeko,NA,1,2,2,NA,boingla beeko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,4,1,1,NA,wooshla bugo,NA,1,1,2,NA,boingla beeko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,1,1,1,NA,wooshla beeko,NA,5,1,2,NA,boingla oinko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,2,1,1,NA,wooshla trunko,NA,2,2,2,NA,boingla trunko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,6,1,2,NA,boingla fino,NA,2,1,1,NA,wooshla trunko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,5,2,2,NA,boingla oinko pag,NA,4,2,1,NA,wooshla bugo pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,3,2,2,NA,boingla hoppo pag,NA,1,2,1,NA,wooshla beeko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,6,2,1,NA,wooshla fino wib,NA,4,2,2,NA,boingla bugo pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,5,1,1,NA,wooshla oinko,NA,3,1,1,NA,wooshla jumpo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,4,1,2,NA,boingla bugo,NA,5,2,1,NA,wooshla oinko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,3,1,1,NA,wooshla hoppo,NA,6,2,1,NA,wooshla fino pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,5,2,1,NA,wooshla oinko,NA,2,1,2,NA,boingla trunko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,4,2,2,NA,boingla bugo pag,NA,6,1,1,NA,wooshla fino,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,2,1,2,NA,boingla trunko,NA,3,2,1,NA,wooshla jumpo pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,1,2,2,NA,boingla beeko wib,NA,3,2,2,NA,goingla jumpo pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,2,2,1,NA,wooshla trunko,NA,1,1,1,NA,wooshla beeko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,2,2,2,NA,boingla trunko wib,NA,6,2,2,NA,boingla fino pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,6,2,2,NA,boingla fino pag,NA,4,1,1,NA,wooshla bugo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,1,1,2,NA,boingla beeko,NA,3,1,2,NA,boingla jumpo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,6,1,1,NA,wooshla fino,NA,1,2,2,NA,boingla beeko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,3,2,1,NA,wooshla hoppo wib,NA,4,1,2,NA,boingla bugo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,3,1,2,NA,boingla hoppo,NA,2,2,1,NA,wooshla trunko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,4,2,1,NA,wooshla bugo wib,NA,5,1,1,NA,wooshla oinko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,5,1,2,NA,boingla oinko,NA,6,1,2,NA,boingla fino,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting1,NA,1,2,1,NA,wooshla beeko wib,NA,5,2,2,NA,boingla oinko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+InteractiveTesting,0,2,2,1,NA,wooshla trunko wib,NA,NA,NA,NA,NA,NA,NA,wooshla trunko wib,412,221,422,421,211,411,212,222,7,2,1,2,0
+InteractiveTesting,1,5,2,1,NA,wooshla oinko pag,NA,NA,NA,NA,NA,NA,NA,wooshla oinko pag,122,111,512,511,522,521,121,112,6,5,2,1,1
+InteractiveTesting,0,3,2,1,NA,wooshla hoppo pag,NA,NA,NA,NA,NA,NA,NA,wooshla hoppo pag,221,321,311,222,312,211,322,212,2,3,2,1,1
+InteractiveTesting,1,5,1,2,NA,boingla oinko wib,NA,NA,NA,NA,NA,NA,NA,boingla oinko wib,122,512,522,511,521,111,121,112,3,5,2,2,0
+InteractiveTesting,0,5,1,2,NA,boingla oinko,NA,NA,NA,NA,NA,NA,NA,boingla oinko,621,622,522,612,511,611,521,512,8,5,1,2,1
+InteractiveTesting,1,4,1,2,NA,boingla bugo,NA,NA,NA,NA,NA,NA,NA,boingla bugo,621,622,421,422,611,411,412,612,7,4,1,2,1
+InteractiveTesting,0,2,1,1,NA,wooshla trunko,NA,NA,NA,NA,NA,NA,NA,wooshla trunko,122,112,121,211,221,212,111,222,4,2,1,1,1
+InteractiveTesting,1,6,1,2,NA,boingla fino,NA,NA,NA,NA,NA,NA,NA,boingla fino,112,612,111,122,121,611,622,621,2,6,1,2,1
+InteractiveTesting,0,1,1,1,NA,wooshla beeko,NA,NA,NA,NA,NA,NA,NA,wooshla beeko,311,112,312,111,322,321,122,121,4,1,1,1,1
+InteractiveTesting,1,1,2,1,NA,wooshla beeko pag,NA,NA,NA,NA,NA,NA,NA,wooshla beeko pag,111,121,421,112,122,411,412,422,2,1,2,1,1
+InteractiveTesting,0,4,2,2,NA,boingla bugo pag,NA,NA,NA,NA,NA,NA,NA,boingla bugo pag,422,412,421,312,322,321,411,311,1,4,2,2,1
+InteractiveTesting,1,2,2,1,NA,wooshla trunko pag,NA,NA,NA,NA,NA,NA,NA,wooshla trunko pag,212,222,121,111,112,211,122,221,8,2,2,1,1
+InteractiveTesting,0,4,2,1,NA,wooshla bugo pag,NA,NA,NA,NA,NA,NA,NA,wooshla bugo pag,421,611,612,411,412,621,622,422,1,4,2,1,1
+InteractiveTesting,1,4,2,1,NA,wooshla bugo pag,NA,NA,NA,NA,NA,NA,NA,wooshla bugo pag,522,412,521,411,512,422,421,511,7,4,2,1,1
+InteractiveTesting,0,1,2,2,NA,boingla beeko pag,NA,NA,NA,NA,NA,NA,NA,boingla beeko pag,122,121,112,111,222,211,212,221,1,1,2,2,1
+InteractiveTesting,1,6,1,1,NA,wooshla fino,NA,NA,NA,NA,NA,NA,NA,wooshla fino,321,312,311,612,611,622,621,322,5,6,1,1,1
+InteractiveTesting,0,5,2,2,NA,boingla oinko pag,NA,NA,NA,NA,NA,NA,NA,boingla oinko pag,211,222,521,212,511,512,221,522,8,5,2,2,1
+InteractiveTesting,1,1,1,1,NA,wooshla beeko wib,NA,NA,NA,NA,NA,NA,NA,wooshla beeko wib,111,112,212,222,122,121,221,211,6,1,2,1,0
+InteractiveTesting,0,3,2,2,NA,boingla hoppo pag,NA,NA,NA,NA,NA,NA,NA,boingla hoppo pag,322,621,611,312,622,612,321,311,1,3,2,2,1
+InteractiveTesting,1,3,2,1,NA,wooshla hoppo pag,NA,NA,NA,NA,NA,NA,NA,wooshla hoppo pag,312,112,111,322,122,321,121,311,6,3,2,1,1
+InteractiveTesting,0,5,2,1,NA,wooshla oinko wib,NA,NA,NA,NA,NA,NA,NA,wooshla oinko wib,512,511,422,412,411,421,521,522,1,5,1,2,0
+InteractiveTesting,1,2,1,1,NA,wooshla trunko,NA,NA,NA,NA,NA,NA,NA,wooshla trunko,221,122,111,212,121,222,112,211,8,2,1,1,1
+InteractiveTesting,0,2,2,2,NA,boingla trunko pag,NA,NA,NA,NA,NA,NA,NA,boingla trunko pag,612,211,212,621,221,622,611,222,8,2,2,2,1
+InteractiveTesting,1,1,1,2,NA,boingla beeko,NA,NA,NA,NA,NA,NA,NA,boingla beeko,211,112,111,121,212,122,221,222,2,1,1,2,1
+InteractiveTesting,0,4,1,1,NA,wooshla bugo,NA,NA,NA,NA,NA,NA,NA,wooshla bugo,412,422,421,222,411,212,211,221,5,4,1,1,1
+InteractiveTesting,1,2,1,2,NA,boingla trunko,NA,NA,NA,NA,NA,NA,NA,boingla trunko,122,121,112,212,211,221,222,111,4,2,1,2,1
+InteractiveTesting,0,6,2,2,NA,boingla fino pag,NA,NA,NA,NA,NA,NA,NA,boingla fino pag,612,411,621,422,421,622,611,412,6,6,2,2,1
+InteractiveTesting,1,4,1,1,NA,wooshla bugo,NA,NA,NA,NA,NA,NA,NA,wooshla bugo,521,411,511,421,512,522,422,412,2,4,1,1,1
+InteractiveTesting,0,5,1,1,NA,wooshla oinko,NA,NA,NA,NA,NA,NA,NA,wooshla oinko,511,521,621,622,512,522,611,612,1,5,1,1,1
+InteractiveTesting,1,3,1,2,NA,boingla jumpo,NA,NA,NA,NA,NA,NA,NA,boingla hoppo,312,211,311,321,221,322,222,212,1,3,1,2,1
+InteractiveTesting,0,4,1,2,NA,boinglo bugo,NA,NA,NA,NA,NA,NA,NA,boingla bugo,111,421,422,412,411,122,112,121,4,4,1,2,1
+InteractiveTesting,1,2,2,2,NA,boingla trunko pag,NA,NA,NA,NA,NA,NA,NA,boingla trunko pag,222,111,212,112,121,211,221,122,1,2,2,2,1
+InteractiveTesting,0,3,1,2,NA,boingla hoppo,NA,NA,NA,NA,NA,NA,NA,boingla hoppo,112,111,321,121,311,322,312,122,7,3,1,2,1
+InteractiveTesting,1,3,2,2,NA,boingla hoppo pag,NA,NA,NA,NA,NA,NA,NA,boingla hoppo pag,322,622,612,621,311,321,611,312,1,3,2,2,1
+InteractiveTesting,0,3,1,1,NA,wooshla hoppo,NA,NA,NA,NA,NA,NA,NA,wooshla hoppo,311,321,411,312,412,322,422,421,1,3,1,1,1
+InteractiveTesting,1,6,2,2,NA,boingla fino pag,NA,NA,NA,NA,NA,NA,NA,boingla fino pag,121,622,122,621,612,111,112,611,2,6,2,2,1
+InteractiveTesting,0,2,1,2,NA,boingla trunko,NA,NA,NA,NA,NA,NA,NA,boingla trunko,222,221,622,612,611,621,211,212,8,2,1,2,1
+InteractiveTesting,1,4,2,2,NA,boingla bugo pag,NA,NA,NA,NA,NA,NA,NA,boingla bugo pag,612,412,422,411,622,621,611,421,3,4,2,2,1
+InteractiveTesting,0,6,1,1,NA,wooshla fino,NA,NA,NA,NA,NA,NA,NA,wooshla fino,611,321,311,622,612,621,312,322,1,6,1,1,1
+InteractiveTesting,1,5,2,2,NA,boingla oinko pag,NA,NA,NA,NA,NA,NA,NA,boingla oinko pag,521,411,511,412,421,522,512,422,6,5,2,2,1
+InteractiveTesting,0,6,2,1,NA,wooshla fino pag,NA,NA,NA,NA,NA,NA,NA,wooshla fino pag,122,621,612,622,611,112,111,121,2,6,2,1,1
+InteractiveTesting,1,6,2,1,NA,wooshla fino pag,NA,NA,NA,NA,NA,NA,NA,wooshla fino pag,521,512,611,522,621,511,612,622,5,6,2,1,1
+InteractiveTesting,0,1,1,2,NA,boingla beeko,NA,NA,NA,NA,NA,NA,NA,boingla beeko,121,122,222,112,221,212,211,111,4,1,1,2,1
+InteractiveTesting,1,5,1,1,NA,wooshla oinko,NA,NA,NA,NA,NA,NA,NA,wooshla oinko,521,211,512,222,522,212,221,511,8,5,1,1,1
+InteractiveTesting,0,6,1,2,NA,boingla fino,NA,NA,NA,NA,NA,NA,NA,boingla fino,422,421,622,621,611,612,412,411,6,6,1,2,1
+InteractiveTesting,1,3,1,1,NA,wooshla jumpo,NA,NA,NA,NA,NA,NA,NA,wooshla bugo,122,312,311,121,322,321,112,111,8,1,1,1,0
+InteractiveTesting,0,1,2,1,NA,wooshla beeko pag,NA,NA,NA,NA,NA,NA,NA,wooshla beeko pag,421,422,122,412,121,112,411,111,3,1,2,2,0
+InteractiveTesting,1,1,2,2,NA,boingla beeko pag,NA,NA,NA,NA,NA,NA,NA,boingla beeko pag,611,621,622,122,111,112,121,612,4,1,2,2,1
+InteractiveTesting,0,1,1,1,NA,wooshla beeko,NA,NA,NA,NA,NA,NA,NA,wooshla beeko,611,121,612,111,621,122,112,622,4,1,1,1,1
+InteractiveTesting,1,1,1,2,NA,boingla beeko,NA,NA,NA,NA,NA,NA,NA,boingla beeko,611,121,112,122,621,622,111,612,3,1,1,2,1
+InteractiveTesting,0,1,2,1,NA,wooshla beeko pag,NA,NA,NA,NA,NA,NA,NA,wooshla beeko pag,121,622,111,112,621,122,612,611,1,1,2,1,1
+InteractiveTesting,1,1,2,1,NA,wooshla beeko pag,NA,NA,NA,NA,NA,NA,NA,wooshla beeko pag,522,521,122,121,112,512,511,111,4,1,2,1,1
+InteractiveTesting,0,6,2,2,NA,boingla fino pag,NA,NA,NA,NA,NA,NA,NA,boingla fino pag,622,221,612,621,611,211,212,222,1,6,2,2,1
+InteractiveTesting,1,6,2,1,NA,wooshla fino pag,NA,NA,NA,NA,NA,NA,NA,wooshla fino pag,221,621,211,612,212,222,622,611,2,6,2,1,1
+InteractiveTesting,0,4,2,1,NA,wooshla bugo pag,NA,NA,NA,NA,NA,NA,NA,wooshla bugo pag,312,321,421,411,311,322,422,412,3,4,2,1,1
+InteractiveTesting,1,5,2,1,NA,wooshla oinko pag,NA,NA,NA,NA,NA,NA,NA,wooshla oinko pag,221,511,512,222,211,212,522,521,8,5,2,1,1
+InteractiveTesting,0,3,1,1,NA,wooshla hoppo,NA,NA,NA,NA,NA,NA,NA,wooshla hoppo,312,311,111,321,121,112,322,122,2,3,1,1,1
+InteractiveTesting,1,1,1,1,NA,wooshla beeko,NA,NA,NA,NA,NA,NA,NA,wooshla beeko,122,111,421,422,411,412,121,112,2,1,1,1,1
+InteractiveTesting,0,3,2,2,NA,boingla hoppo pag,NA,NA,NA,NA,NA,NA,NA,boingla hoppo pag,321,422,311,411,312,322,421,412,6,3,2,2,1
+InteractiveTesting,1,4,1,1,NA,wooshla bugo,NA,NA,NA,NA,NA,NA,NA,wooshla bugo,311,411,421,322,412,321,312,422,2,4,1,1,1
+InteractiveTesting,0,5,2,1,NA,wooshla oinko pag,NA,NA,NA,NA,NA,NA,NA,wooshla oinko pag,511,121,522,122,512,112,111,521,8,5,2,1,1
+InteractiveTesting,1,5,1,2,NA,boingla oinko,NA,NA,NA,NA,NA,NA,NA,boingla oinko,311,322,511,522,512,312,321,521,5,5,1,2,1
+InteractiveTesting,0,5,2,2,NA,boingla oinko pag,NA,NA,NA,NA,NA,NA,NA,boingla oinko pag,522,411,521,422,511,512,412,421,1,5,2,2,1
+InteractiveTesting,1,3,1,1,NA,wooshla jumpo,NA,NA,NA,NA,NA,NA,NA,wooshla hoppo,321,322,522,312,511,311,512,521,6,3,1,1,1
+InteractiveTesting,0,1,2,2,NA,boingla beeko pag,NA,NA,NA,NA,NA,NA,NA,boingla beeko pag,111,121,112,521,122,512,511,522,5,1,2,2,1
+InteractiveTesting,1,6,1,2,NA,boingla fino,NA,NA,NA,NA,NA,NA,NA,boingla fino,421,622,612,422,411,621,611,412,3,6,1,2,1
+InteractiveTesting,0,6,1,2,NA,boingla fino,NA,NA,NA,NA,NA,NA,NA,boingla fino,622,612,221,211,621,222,611,212,2,6,1,2,1
+InteractiveTesting,1,5,2,2,NA,boingla oinko pag,NA,NA,NA,NA,NA,NA,NA,boingla oinko pag,112,521,122,522,512,511,111,121,4,5,2,2,1
+InteractiveTesting,0,3,1,2,NA,boingla hoppo,NA,NA,NA,NA,NA,NA,NA,boingla hoppo,322,311,312,121,321,111,112,122,3,3,1,2,1
+InteractiveTesting,1,4,1,2,NA,boingla bugo,NA,NA,NA,NA,NA,NA,NA,boingla bugo,111,421,122,412,411,121,422,112,4,4,1,2,1
+InteractiveTesting,0,5,1,2,NA,boingla oinko,NA,NA,NA,NA,NA,NA,NA,boingla oinko,421,522,521,512,511,412,422,411,4,5,1,2,1
+InteractiveTesting,1,2,1,2,NA,boingla trunko,NA,NA,NA,NA,NA,NA,NA,boingla trunko,121,212,221,122,211,222,111,112,2,2,1,2,1
+InteractiveTesting,0,4,1,1,NA,wooshla bugo,NA,NA,NA,NA,NA,NA,NA,wooshla bugo,621,612,421,411,412,422,622,611,4,4,1,1,1
+InteractiveTesting,1,5,1,1,NA,wooshla oinko,NA,NA,NA,NA,NA,NA,NA,wooshla oinko,522,521,412,421,511,411,512,422,5,5,1,1,1
+InteractiveTesting,0,5,1,1,NA,wooshla oinko,NA,NA,NA,NA,NA,NA,NA,wooshla oinko,512,411,522,421,511,521,412,422,5,5,1,1,1
+InteractiveTesting,1,4,2,1,NA,wooshla bugo pag,NA,NA,NA,NA,NA,NA,NA,wooshla bugo pag,421,422,521,511,522,411,512,412,1,4,2,1,1
+InteractiveTesting,0,2,1,2,NA,boingla trunko,NA,NA,NA,NA,NA,NA,NA,boingla trunko,211,422,221,411,421,222,212,412,7,2,1,2,1
+InteractiveTesting,1,2,2,2,NA,boingla trunko pag,NA,NA,NA,NA,NA,NA,NA,boingla trunko pag,522,521,512,222,221,511,211,212,4,2,2,2,1
+InteractiveTesting,0,3,2,1,NA,wooshla hoppo pag,NA,NA,NA,NA,NA,NA,NA,wooshla hoppo pag,321,322,512,522,521,511,311,312,1,3,2,1,1
+InteractiveTesting,1,6,1,1,NA,wooshla fino,NA,NA,NA,NA,NA,NA,NA,wooshla fino,411,611,422,612,412,621,622,421,2,6,1,1,1
+InteractiveTesting,0,1,1,2,NA,boingla beeko,NA,NA,NA,NA,NA,NA,NA,boingla beeko,212,111,112,211,121,122,222,221,3,1,1,2,1
+InteractiveTesting,1,2,1,1,NA,Wooshla trunko,NA,NA,NA,NA,NA,NA,NA,wooshla trunko,221,222,212,512,522,511,521,211,8,2,1,1,1
+InteractiveTesting,0,2,2,1,NA,wooshla trunko pag,NA,NA,NA,NA,NA,NA,NA,wooshla trunko pag,211,222,221,412,212,421,411,422,3,2,2,1,1
+InteractiveTesting,1,2,2,1,NA,wooshla trunko pag,NA,NA,NA,NA,NA,NA,NA,wooshla trunko pag,222,221,211,212,322,312,321,311,2,2,2,1,1
+InteractiveTesting,0,4,2,2,NA,boingla bugo pag,NA,NA,NA,NA,NA,NA,NA,boingla bugo pag,422,421,412,312,321,411,311,322,1,4,2,2,1
+InteractiveTesting,1,3,2,2,NA,boingla jumpo pag,NA,NA,NA,NA,NA,NA,NA,boingla bugo pag,312,121,311,111,112,122,322,321,7,3,2,2,1
+InteractiveTesting,0,4,1,2,NA,boingla bugo,NA,NA,NA,NA,NA,NA,NA,boingla bugo,421,512,422,521,411,412,522,511,6,4,1,2,1
+InteractiveTesting,1,1,2,2,NA,Boingla beeko pag,NA,NA,NA,NA,NA,NA,NA,boingla beeko pag,121,611,112,122,622,621,612,111,4,1,2,2,1
+InteractiveTesting,0,2,2,2,NA,boingla trunko pag,NA,NA,NA,NA,NA,NA,NA,boingla trunko pag,412,211,411,422,221,222,421,212,6,2,2,2,1
+InteractiveTesting,1,3,1,2,NA,boingla jumpo,NA,NA,NA,NA,NA,NA,NA,boingla bugo,412,411,322,422,321,312,421,311,1,4,1,2,0
+InteractiveTesting,0,6,2,1,NA,wooshla fino pag,NA,NA,NA,NA,NA,NA,NA,wooshla fino pag,221,621,222,612,211,622,611,212,2,6,2,1,1
+InteractiveTesting,1,3,2,1,NA,wooshla jumpo pag,NA,NA,NA,NA,NA,NA,NA,wooshla hoppo pag,321,221,212,311,312,211,222,322,1,3,2,1,1
+InteractiveTesting,0,2,1,1,NA,wooshla trunko,NA,NA,NA,NA,NA,NA,NA,wooshla trunko,211,212,222,311,221,312,322,321,1,2,1,1,1
+InteractiveTesting,1,6,2,2,NA,boingla fino pag,NA,NA,NA,NA,NA,NA,NA,boingla fino pag,621,112,622,612,121,122,611,111,3,6,2,2,1
+InteractiveTesting,0,6,1,1,NA,wooshla fino,NA,NA,NA,NA,NA,NA,NA,wooshla fino,621,612,611,112,622,121,111,122,3,6,1,1,1
+InteractiveTesting,1,4,2,2,NA,boingla bugo pag,NA,NA,NA,NA,NA,NA,NA,boingla bugo pag,412,212,421,222,211,221,422,411,7,4,2,2,1
+IsolateTesting2,NA,3,2,1,NA,wooshla hoppo pag,NA,6,2,2,NA,boingla fino pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,3,2,2,NA,boingla hoppo pag,NA,5,1,2,NA,boingla oinko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,2,1,2,NA,boingla trunko,NA,1,1,1,NA,wooshla beeko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,2,2,2,NA,boingla trunko pag,NA,6,1,1,NA,wooshla fino,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,1,1,2,NA,boingla beeko,NA,4,2,1,NA,wooshla bugo pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,4,2,1,NA,wooshla bugo pag,NA,6,2,1,NA,wooshla fino pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,3,1,2,NA,boingla hoppo,NA,2,1,2,NA,boingla trunko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,6,2,1,NA,wooshla fino pag,NA,2,2,1,NA,wooshla trunko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,5,1,2,NA,boingla oinko,NA,3,1,1,NA,wooshla jumpo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,6,1,2,NA,boingla fino,NA,3,2,2,NA,boingla jumpo pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,3,1,1,NA,wooshla hoppo,NA,3,1,2,NA,boingla jumpo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,2,2,1,NA,wooshla trunko pag,NA,2,1,1,NA,wooshla trunko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,1,2,2,NA,boingla beeko pag,NA,2,2,2,NA,boingla trunko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,1,2,1,NA,wooshla beeko wib,NA,4,1,2,NA,boingla bugo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,6,2,2,NA,boingla fino wib,NA,5,2,1,NA,wooshla oinko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,4,1,2,NA,boingla bugo,NA,6,1,2,NA,boingla fino,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,4,1,1,NA,wooshla bugo,NA,3,2,1,NA,wooshla jumpo pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,2,1,1,NA,wooshla trunko,NA,5,2,2,NA,boingla oinko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,1,1,1,NA,wooshla beeko,NA,1,2,2,NA,boingla beeko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,4,2,2,NA,boingla bugo pag,NA,1,2,1,NA,wooshla beeko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,6,1,1,NA,wooshla fino,NA,5,1,1,NA,wooshla oinko wib,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,5,2,1,NA,wooshla oinko pag,NA,4,1,1,NA,wooshla bugo wib,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,5,2,2,NA,boingla oinko pag,NA,4,2,2,NA,boingla bugo pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,5,1,1,NA,wooshla oinko,NA,1,1,2,NA,boingla beeko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,6,2,2,NA,boingla fino pag,NA,2,1,2,NA,boingla trunko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,4,1,1,NA,wooshla bugo,NA,5,2,2,NA,boingla oinko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,1,2,2,NA,boingla beeko pag,NA,3,2,1,NA,wooshla jumpo pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,5,2,2,NA,boingla oinko pag,NA,1,1,2,NA,boingla beeko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,1,1,1,NA,wooshla beeko,NA,1,2,2,NA,boingla beeko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,5,1,1,NA,wooshla oinko,NA,3,2,2,NA,boingla jumpo pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,4,1,2,NA,boingla bugo,NA,5,1,2,NA,boingla oinko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,2,2,1,NA,wooshla trunko wib,NA,1,1,1,NA,wooshla beeko wib,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,5,1,2,NA,boingla oinko,NA,2,1,1,NA,wooshla trunko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,3,2,2,NA,boingla hoppo pag,NA,4,1,2,NA,boingla bugo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,2,1,2,NA,boingla trunko,NA,2,2,2,NA,boingla trunko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,6,1,2,NA,boingla fino,NA,4,2,2,NA,boingla bugo pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,5,2,1,NA,wooshla oinko wib,NA,3,1,1,NA,wooshla umpo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,3,1,2,NA,boingla hoppo pag,NA,1,2,1,NA,wooshla beeko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,1,2,1,NA,wooshla beeko wib,NA,5,1,1,NA,wooshla oinko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,2,2,2,NA,boingla trunko pag,NA,6,1,1,NA,wooshla fino,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,4,2,2,NA,boingla bugo pag,NA,4,2,1,NA,wooshla bugo pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,6,2,1,NA,wooshla fino pag,NA,4,1,1,NA,wooshla buggo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,2,1,1,NA,wooshla trunko,NA,5,2,1,NA,wooshla oinko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,4,2,1,NA,wooshla bugo pag,NA,3,1,2,NA,boingla jumpo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,1,1,2,NA,boingla beeko,NA,6,1,2,NA,boingla fino,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,3,2,1,NA,wooshla hoppo pag,NA,2,2,1,NA,wooshla trunko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,6,1,1,NA,wooshla fino,NA,6,2,2,NA,boingla fino pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,3,1,1,NA,wooshla hoppo,NA,6,2,1,NA,wooshla fino pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,5,2,1,NA,wooshla oinko,NA,4,2,2,NA,boingla buggo pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,5,1,2,NA,boingla oinko,NA,2,1,1,NA,wooshla trunko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,6,2,1,NA,wooshla fino pag,NA,2,1,2,NA,boingla trunko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,2,2,2,NA,boingla trunko paf,NA,5,1,2,NA,boingla oinko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,5,1,1,NA,wooshla oinko,NA,4,2,1,NA,wooshla buggo pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,4,1,1,NA,wooshla bugo,NA,5,2,1,NA,wooshla oinko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,4,2,2,NA,boingla bugo pag,NA,1,2,2,NA,boingla beeko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,2,1,1,NA,wooshla trunko,NA,4,1,1,NA,wooshla buggo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,4,1,2,NA,boingla bugo,NA,3,1,2,NA,boingla jumpo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,1,1,1,NA,wooshla beeko,NA,1,2,1,NA,wooshla beeko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,3,2,2,NA,boingla hoppo pag,NA,6,1,1,NA,wooshla fino,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,3,1,2,NA,boingla hoppo,NA,3,2,2,NA,boingla jumpo pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,1,1,2,NA,boingla beeko,NA,2,2,2,NA,boingla trunko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,2,1,2,NA,boingla trunko,NA,6,2,2,NA,boingla fino pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,3,2,1,NA,wooshla hoppo pag,NA,3,1,1,NA,wooshla jumpo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,5,2,2,NA,boingla oinko pag,NA,1,1,2,NA,boingla beeko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,2,2,1,NA,wooshla trunko pag,NA,2,2,1,NA,wooshla trunko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,6,1,2,NA,boingla fino pag,NA,6,1,2,NA,boingla fino,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,1,2,1,NA,wooshla beeko pag,NA,4,1,2,NA,boingla buggo,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,6,1,1,NA,wooshla fino,NA,5,1,1,NA,wooshla oinko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,6,2,2,NA,boingla fino pag,NA,5,2,2,NA,boingla oinko pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,4,2,1,NA,wooshla bugo pag,NA,6,2,1,NA,wooshla fino pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,1,2,2,NA,boingla beeko pag,NA,3,2,1,NA,wooshla jumpo pag,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+IsolateTesting2,NA,3,1,1,NA,wooshla hoppo,NA,1,1,1,NA,wooshla beeko,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

@@ -1,0 +1,5 @@
+"0","#calculate word order
+processed.data$WordOrder <- mapply(function(s) identify.word.order(s),
+                                   processed.data$Description)
+"
+"2","restarting interrupted promise evaluation"

@@ -1,0 +1,254 @@
+---
+title: "Asymmetric alignment paper, data preprocessing script"
+author: "Kenny Smith"
+date: "23/1/2019"
+output: html_document
+---
+
+The data produced by the experimental code is in a slightly awkward format (one line in training and recall tests includes data from a *pair* of trials, one produced by both participants. To facilitate analysis, we convert this to a format more ameanable to plotting etc.
+
+
+```{r, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+library(plyr)
+data.directory = 'RawData/'
+source("RCode/findClosestMatch.R")
+```
+
+
+# Utility functions: Identify word order 
+
+```{r}
+#remove trailing/leading whitespace
+trim <- function (x) gsub("^\\s+|\\s+$", "", x)
+
+verbs <- c("wooshla","boingla")
+nouns <- c("beeko", "trunko", "hoppo", "bugo", "oinko","fino")
+particles <- c("bup", "dak", "jeb", "kem", "pag", "tid", "wib", "yav")
+all.legal.words <- c(verbs,nouns,particles)
+
+#this function takes a label and identifies the word order, using the findClosestMatch and the dictionaries defined above
+identify.word.order <- function(label) {
+  if (is.na(label)) {
+    NA}  
+  else 
+  {words <- strsplit(label, ' ')[[1]] #split the label around spaces
+   order <- ""
+   for (w in words) {
+     closest_legal_w <- findClosestMatch(trim(w),all.legal.words)
+     if (is.element(closest_legal_w,verbs)){
+       order <- paste(order,"V",sep="")}
+     else if (is.element(closest_legal_w,nouns)) {
+       order <- paste(order,"N",sep="")}
+     else if (is.element(closest_legal_w,particles)){
+       order <- paste(order,"P",sep="")}
+     else {
+       print("Error - no legal closest match?")
+       order <- paste(order,"O",sep="")}
+   }
+   order
+  }
+}
+
+#this assigns NA to illegal labels, i.e. that aren't VN or VNP, after individual-word correction
+is.number.marked <- function(word.order) {
+  if (is.na(word.order)) {
+    NA
+  }
+  else if (word.order == "VNP") {
+    TRUE}
+  else if (word.order == "VN") {
+    FALSE}
+  else {NA}
+}
+```
+
+
+
+
+
+# Import data and collate
+
+```{r}
+
+condition.66.33.pairs <- c(60,67,68,73,75,77,80,88,90,101,171,172,173,174,176,177,178,179,180,188)
+
+condition.83.17.pairs <- c(61,64,66,69,70,72,78,82,94,98,102,181,182,183,184,185,186,187,189,190)
+
+condition.100.66.pairs <- c(62,71,74,79,81,85,86,95,96,99,151,152,153,154,155,156,157,158,159,160)
+
+condition.100.33.pairs <- c(63,65,76,83,84,89,91,92,93,97,100,161,162,163,164,165,166,167,168,169,170)
+
+all.pairs <- c(condition.66.33.pairs,condition.83.17.pairs,
+               condition.100.66.pairs,condition.100.33.pairs)
+
+#utility function to look up pair and label condition
+pair.to.condition <- function(p) {
+    if (p %in% condition.66.33.pairs) {
+      '66-33'
+    }
+  else if (p %in% condition.83.17.pairs) {
+      '83-17'
+  }
+  else if (p %in% condition.100.66.pairs) {
+      '100-66'
+  }
+  else if (p %in% condition.100.33.pairs) {
+      '100-33'
+  }
+}
+
+#utility function to look up pair and label condition
+pair.to.experiment <- function(p) {
+  if ((p %in% condition.66.33.pairs) | (p %in% condition.83.17.pairs)) {
+      'Experiment1'}
+  else {
+    'Experiment2'
+  }}
+ 
+
+# Reads in a pair and adds condition info and trial number
+read.pair <- function(pair.id) {
+  this.pair.data <- read.csv(paste(sep="",data.directory,pair.id,".txt"),stringsAsFactors=FALSE)
+  this.pair.data$Pair <- pair.id
+  this.pair.data$Condition <- pair.to.condition(pair.id)
+  this.pair.data$Experiment <- pair.to.experiment(pair.id)
+  #order Block levels to avoid them being messed up by ddply, then add trial numbers by block using ddply
+  this.pair.data$Block <- factor(this.pair.data$Block,
+                                    levels=c("VocabTraining",
+                                             "VocabTesting",
+                                             "Training",
+                                             "IsolateTesting1",
+                                             "InteractiveTesting",
+                                             "InteractiveTesting1",
+                                             "InteractiveTesting2",
+                                             "IsolateTesting2"))
+  this.pair.data <- ddply(this.pair.data,~ Block,transform,TrialN=1:length(Block))
+  this.pair.data
+}
+
+all.data <- do.call("rbind", lapply(all.pairs, function(pair) read.pair(pair)))
+
+#keep only blocks we need
+all.data <- subset(all.data,Block %in% c("Training","IsolateTesting1","InteractiveTesting","IsolateTesting2"))
+
+#utility function to split interaction data into two blocks for analysis
+all.data$Block <- mapply(function(block,trialn)
+  ifelse(block=="InteractiveTesting" & trialn<=48,"InteractiveTesting1",
+         ifelse(block=="InteractiveTesting" & trialn>48,"InteractiveTesting2",
+                                levels(all.data$Block)[block])),
+  all.data$Block,all.data$TrialN)
+
+#relabel blocks
+all.data$Block <- revalue(all.data$Block,
+                         c("Training"="Training",
+                           "IsolateTesting1"="Recall 1",
+                           "InteractiveTesting1"="Interaction Block 1",
+                           "InteractiveTesting2"="Interaction Block 2",
+                           "IsolateTesting2"="Recall 2"
+              ))
+
+```
+
+# Organise training and recall data so that there is one line per trial
+
+For training and recall data data from each participant is included per line, we want to split that. 
+
+Additionally, for training data we want to keep the *target* description, not what they typed during the trivial retyping test.
+
+```{r}
+#Deal with training data
+unformatted.training.data <- subset(all.data,Block=='Training')
+
+dom.training.data <- dplyr::select(unformatted.training.data,Experiment,Condition,Pair,Block,TrialN,DomTargetAnimal,DomTargetNumber,DomTargetMotion,DomTargetDescription)
+dom.training.data$Participant <- "P1"
+dom.training.data <- rename(dom.training.data,
+                      c('DomTargetAnimal'='Animal',
+                        'DomTargetNumber'='Number',
+                        'DomTargetMotion'='Movement',
+                        'DomTargetDescription'='Description'))
+
+sub.training.data <- dplyr::select(unformatted.training.data,Experiment,Condition,Pair,Block,TrialN,SubTargetAnimal,SubTargetNumber,SubTargetMotion,SubTargetDescription)
+sub.training.data$Participant <- "P2"
+sub.training.data <- rename(sub.training.data,
+                      c('SubTargetAnimal'='Animal',
+                        'SubTargetNumber'='Number',
+                        'SubTargetMotion'='Movement',
+                        'SubTargetDescription'='Description'))
+
+training.data <- rbind(dom.training.data,sub.training.data)
+training.data$ParticipantID <- paste(training.data$Pair,training.data$Participant,sep='')
+training.data$Score <- NA #for compatability with interaction data
+
+```
+
+```{r}
+#Deal with recall data - note that now we want their typed descriptions
+unformatted.recall.data <- subset(all.data,grepl('Recall',Block))
+
+dom.recall.data <- dplyr::select(unformatted.recall.data,Experiment,Condition,Pair,Block,TrialN,DomTargetAnimal,DomTargetNumber,DomTargetMotion,DomTypedDescription)
+dom.recall.data$Participant <- "P1"
+dom.recall.data <- rename(dom.recall.data,
+                           c('DomTargetAnimal'='Animal',
+                        'DomTargetNumber'='Number',
+                        'DomTargetMotion'='Movement',
+                        'DomTypedDescription'='Description'))
+
+sub.recall.data <- dplyr::select(unformatted.recall.data,Experiment,Condition,Pair,Block,TrialN,SubTargetAnimal,SubTargetNumber,SubTargetMotion,SubTypedDescription)
+sub.recall.data$Participant <- "P2"
+sub.recall.data <- rename(sub.recall.data,
+                           c('SubTargetAnimal'='Animal',
+                        'SubTargetNumber'='Number',
+                        'SubTargetMotion'='Movement',
+                        'SubTypedDescription'='Description'))
+
+recall.data <- rbind(dom.recall.data,sub.recall.data)
+recall.data$ParticipantID <- paste(recall.data$Pair,recall.data$Participant,sep='')
+recall.data$Score <- NA #for compatability with interaction data
+```
+
+Convert interaction data to same format. Format here in the raw data is a little different - one line per trial, direcor's text is always in the Dom column, but Director column indicates who was directing (0 = Dominant = P1)
+
+```{r}
+unformatted.interaction.data <- subset(all.data,grepl('Interaction',Block))
+
+interaction.data <- dplyr::select(unformatted.interaction.data,Experiment,Condition,Pair,Block,TrialN,DomTargetAnimal,DomTargetNumber,DomTargetMotion,DomTypedDescription,Score,Director)
+interaction.data$Participant <- ifelse(interaction.data$Director==0,'P1','P2')
+interaction.data <- dplyr::select(interaction.data,-Director)
+interaction.data <- rename(interaction.data,
+                           c('DomTargetAnimal'='Animal',
+                        'DomTargetNumber'='Number',
+                        'DomTargetMotion'='Movement',
+                        'DomTypedDescription'='Description'))
+
+interaction.data$ParticipantID <- paste(interaction.data$Pair,interaction.data$Participant,sep='')
+```
+
+#Rebuild single dataframe and save
+
+```{r}
+processed.data <- rbind(training.data,recall.data,interaction.data)
+processed.data$Block <- factor(processed.data$Block,
+                               levels=c("Training",
+                                        "Recall 1",
+                                        "Interaction Block 1",
+                                        "Interaction Block 2",
+                                        "Recall 2"))
+
+#sort by block etc appropriately
+processed.data <- dplyr::arrange(processed.data,
+                                 Experiment,Condition,Pair,Block,TrialN,Participant)
+
+#calculate word order
+processed.data$WordOrder <- mapply(function(s) identify.word.order(s),
+                                   processed.data$Description)
+processed.data$Marked <- mapply(function(o) is.number.marked(o),
+                                   processed.data$WordOrder)
+```
+
+```{r}
+write.csv(subset(processed.data,Experiment=='Experiment1'),"ProcessedData/Experiment1Data.csv")
+write.csv(subset(processed.data,Experiment=='Experiment2'),"ProcessedData/Experiment2Data.csv")
+
+```

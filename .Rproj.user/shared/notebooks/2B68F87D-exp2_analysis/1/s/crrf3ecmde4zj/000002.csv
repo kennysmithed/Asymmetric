@@ -1,0 +1,4 @@
+"0","wilcox.test(subset(exp2.change.data.for.plotting,Participant==""P2"")$ChangeRecall1Recall2)"
+"2","Error in wilcox.test.default(subset(exp2.change.data.for.plotting, Participant ==  : 
+  'x' must be numeric
+"

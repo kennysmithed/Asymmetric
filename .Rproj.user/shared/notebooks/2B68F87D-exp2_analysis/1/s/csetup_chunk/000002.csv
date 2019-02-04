@@ -1,0 +1,4 @@
+"0","knitr::opts_chunk$set(echo = TRUE, warning=FALSE)"
+"0","library(ggplot2)"
+"0","my.colours <- c(""#EA7D00"",""#006DE9"",""#808080"")"
+"0","set.seed(67601)"

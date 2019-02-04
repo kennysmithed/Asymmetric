@@ -1,0 +1,8 @@
+"0","# The easiest way to do this is to build a wide-format table by subsetting based on P then merging"
+"0","p1 <- dplyr::select(subset(exp1.data.by.block,Participant==""P1""),-Participant,-ParticipantID)"
+"0","p2 <- dplyr::select(subset(exp1.data.by.block,Participant==""P2""),-Participant,-ParticipantID)"
+"0","exp1.diffs <- merge(p1,p2,by=c('Condition','Pair','Block','BlockNewlines'))"
+"0","#calculate absolute diffs"
+"0","exp1.diffs$Difference <- abs(exp1.diffs$ProportionMarkedSingulars.x-exp1.diffs$ProportionMarkedSingulars.y)"
+"0","#remove unnecessary columns, reorder Block again"
+"0","exp1.diffs <- dplyr::select(exp1.diffs,-ProportionMarkedSingulars.x,-ProportionMarkedSingulars.y)"
