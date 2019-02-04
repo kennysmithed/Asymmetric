@@ -1,8 +1,0 @@
-"0","#this assigns NA to illegal labels, i.e. that aren't VN or VNP, after individual-word correction
-is.number.marked <- function(word.order) {
-  if is.na(word.order) {
-"
-"2","Error: unexpected symbol in:
-""is.number.marked <- function(word.order) {
-  if is.na""
-"
