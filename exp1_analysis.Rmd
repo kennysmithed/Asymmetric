@@ -1,7 +1,7 @@
 ---
 title: "Asymmetric alignment paper, Experiment 1 analysis and graphs"
 author: "Kenny Smith"
-date: "04/2/2019"
+date: "8th May 2019"
 output: html_document
 ---
 
@@ -45,9 +45,6 @@ exp1.data$Pair <- as.factor(exp1.data$Pair)
 plyr::ddply(exp1.data,~Condition,plyr::summarise,Current_N=length(unique(Pair)))
 
 ```
-
-
-
 
 
 # Brief report of communicative success
@@ -105,6 +102,10 @@ ggplot(data=exp1.data.by.block, aes(x=BlockNewlines, y=ProportionMarkedSingulars
   geom_line() +
   ylab("Proportion Marked Singulars") + 
   theme(axis.title.x = element_blank()) +
+  theme(axis.title.y  = element_text(size=12)) +
+  theme(axis.text.y  = element_text(size=10)) +
+  theme(axis.text.x  = element_text(size=10)) +
+  theme(strip.text.x = element_text(size=10))+
   theme(legend.position="none") + 
   scale_y_continuous(breaks=seq(0,1,1/3),labels=c("0","1/3","2/3","1")) +
   ggsave(file="Plots/Exp1NumMarkingByParticipant.pdf",width=8, height=3)
@@ -166,6 +167,7 @@ ggplot(data=exp1.data.by.block, aes(x=Participant, y=ProportionMarkedSingulars, 
   facet_grid(Condition~Block) +
   stat_summary(geom='bar', fun.y='mean', position='dodge',colour='black') +
   stat_summary(geom='errorbar',fun.data='mean_cl_boot',fun.ymin="min", fun.ymax="max",colour="black",width=0.1) +
+  #stat_summary(geom='errorbar',colour="black",width=0.1) +
   stat_summary(geom='point', fun.y='mean', position='dodge',colour='black') +
   scale_fill_manual(values=c(my.colours[2],my.colours[1],my.colours[3])) +
   coord_cartesian(ylim=c(0,1)) +
@@ -174,6 +176,7 @@ ggplot(data=exp1.data.by.block, aes(x=Participant, y=ProportionMarkedSingulars, 
   theme(axis.title.x = element_blank()) +
   theme(legend.position="none") 
 ```
+
 
 ```{r include=FALSE}
 #Means and CIs - for paper
@@ -189,33 +192,42 @@ ggplot(data=exp1.data.by.block, aes(x=Participant, y=ProportionMarkedSingulars, 
   scale_y_continuous(breaks=seq(0,1,1/3),labels=c("0","1/3","2/3","1")) +
   ylab("Proportion Marked Singulars") + 
   theme(axis.title.x = element_blank()) +
+  theme(axis.title.y  = element_text(size=13)) +
+  theme(axis.text.y  = element_text(size=11)) +
+  theme(axis.text.x  = element_text(size=11)) +
+  theme(strip.text.x = element_text(size=11))+
+  theme(strip.text.y = element_text(size=11))+
   theme(legend.position="none") + 
   ggsave(file="Plots/Exp1NumMarking.pdf",width=8, height=4)
 ```
 
-## Count of systematic users and non-users at recall 1
+
+## Count of systematic users / non-users at Recall 1
+```{r}
+systematic.users <- subset(exp1.data.by.block,Block=="Recall 1" & (ProportionMarkedSingulars==1 | ProportionMarkedSingulars==0))
+plyr::ddply(systematic.users,~Condition,plyr::summarise,Current_N=length(unique(Pair)))
+```
+
+## Count of systematic users / non-users at end of interaction
 ```{r}
 systematic.users <- subset(exp1.data.by.block,Block=="Interaction Block 2" & (ProportionMarkedSingulars==1 | ProportionMarkedSingulars==0))
 plyr::ddply(systematic.users,~Condition,plyr::summarise,Current_N=length(unique(Pair)))
 ```
 
-## Count of systematic users and non-users at end of interaction
+## Count of systematic users / non-user pairs at end of interaction
 
 ```{r}
 #In order to count convergence on systematic use/non-use, aggregating over participants in each pair
 exp1.data.by.block.agg <- aggregate(ProportionMarkedSingulars~Condition+Pair+Block,data=exp1.data.by.block,FUN=mean)
 systematic.user.pairs <- subset(exp1.data.by.block.agg,Block=="Interaction Block 2" & ProportionMarkedSingulars==1)
-systematic.user.pairs$Pair
-length(unique(systematic.user.pairs$Pair))
+plyr::ddply(subset(systematic.user.pairs),~Condition,plyr::summarise,Current_N=length(unique(Pair)))
+
 
 systematic.nonuser.pairs <- subset(exp1.data.by.block.agg,Block=="Interaction Block 2" & ProportionMarkedSingulars==0)
-systematic.nonuser.pairs$Pair
-length(unique(systematic.nonuser.pairs$Pair))
+plyr::ddply(subset(systematic.nonuser.pairs),~Condition,plyr::summarise,Current_N=length(unique(Pair)))
 ```
 
 # Plot change from block to block, run statistics on those changes
-
-## Plots showing changes in marker usage from block to block
 
 ```{r}
 #The most convenient way to calculate differences from block to block is to restructure the data to wide format.
@@ -241,21 +253,33 @@ exp1.change.data.for.plotting$BlockToBlock <- plyr::revalue(exp1.change.data.for
                                                      "ChangeRecall1Interaction2"="Recall 1 to Interaction Block 2",
                                                      "ChangeRecall1Recall2"="Recall 1 to Recall 2"))
 
-#what I am actually going to want to plot for the change data is either both conditions collapsed, but seperated by P1/P2,Both Ps.
-#to do this, I am going to duplicate the data for the "Both Ps" column, stick them together, and remove the Condition column
+#I often want to plot Both Ps as well as P1 and P2 - to do this, I am duplicating the data amnd labelling the duplicate as "Both Ps" in the Participant column
 exp1.change.data.for.plotting.Pscombined <- exp1.change.data.for.plotting
 exp1.change.data.for.plotting.Pscombined$Participant <- "Both Ps"
 exp1.change.data.for.plotting.combined <- rbind(exp1.change.data.for.plotting,exp1.change.data.for.plotting.Pscombined)
-exp1.change.data.for.plotting.combined$Condition <- NULL
-#want to reorder the levels so that the BothPs data is last
+#Reorder the levels so that the BothPs data is last
 exp1.change.data.for.plotting.combined$Participant <- factor(exp1.change.data.for.plotting.combined$Participant,levels=c("P1","P2","Both Ps"))
+
+#I also want to show the effect for the two conditions combined, since there is often no difference between conditions - again, I duplicate the dataframe and label the Condition column for the combined dataframe as "Both Conditions"
+exp1.change.data.for.plotting.Cscombined <- exp1.change.data.for.plotting.combined
+exp1.change.data.for.plotting.Cscombined$Condition <- "Both Conditions"
+exp1.change.data.for.plotting.combined <- rbind(exp1.change.data.for.plotting.combined,exp1.change.data.for.plotting.Cscombined)
+#Reorder the levels so that the Both Conditions data is first
+exp1.change.data.for.plotting.combined$Condition <- relevel(exp1.change.data.for.plotting.combined$Condition,ref=c("Both Conditions"))
+
+#Reorder the levels ot BlockToBlock so that they reflect experiment order
+exp1.change.data.for.plotting.combined$BlockToBlock <- factor(exp1.change.data.for.plotting.combined$BlockToBlock,levels=c("Training to Recall 1","Recall 1 to Interaction Block 2","Recall 1 to Recall 2"))
+
 ```
 
+## Plots and stats for probability matching (change from Training to Recall 1)
 
-Plot for Training to Recall 1. The statistics (below) show no difference by condition but a difference between participants - I am therefore plotting data collapsed across both conditions, but separated by participant.
+### Plot of change for Training to Recall 1. 
+
 ```{r}
 ggplot(data=subset(exp1.change.data.for.plotting.combined,BlockToBlock=="Training to Recall 1"), aes(x=Participant, y=Change, fill=Participant)) +
   theme_bw() + 
+  facet_grid(. ~ Condition) +
   geom_boxplot() +
   scale_fill_manual(values=c(my.colours[2],my.colours[1],my.colours[3])) +
   scale_y_continuous(limits = c(-1,1.1),breaks=seq(-1,1,1/3),labels=c("-1","-2/3","-1/3","0","+1/3","+2/3","+1")) +
@@ -265,105 +289,17 @@ ggplot(data=subset(exp1.change.data.for.plotting.combined,BlockToBlock=="Trainin
   ggtitle("Training to Recall 1") 
 ```
 
-```{r include=FALSE}
-#for paper - includes annotations for statistical significance.
-ggplot(data=subset(exp1.change.data.for.plotting.combined,BlockToBlock=="Training to Recall 1"), aes(x=Participant, y=Change, fill=Participant)) +
-  theme_bw() + 
-  geom_boxplot() +
-  scale_fill_manual(values=c(my.colours[2],my.colours[1],my.colours[3])) +
-  scale_y_continuous(limits = c(-1,1.1),breaks=seq(-1,1,1/3),labels=c("-1","-2/3","-1/3","0","+1/3","+2/3","+1")) +
-  ylab("Change") + 
-  theme(axis.title.x = element_blank()) +
-  theme(legend.position="none") + 
-  ggtitle("Training to Recall 1") +
-  annotate("text",x=1.5,y=1.09,label="**") + #add ** to indicate p<.01 between participants
-  geom_segment(aes(x=1, y=1.1, xend=1.4, yend=1.1)) + geom_segment(aes(x=1.6, y=1.1, xend=2, yend=1.1)) + #add lines either side of **
-  annotate("text",x=1,y=3/6,label="p=.051") + #add note about n.s.difference from 0
-  annotate("text",x=2,y=-2.4/6,label="*") + #add note about n.s.difference from 0
-  annotate("text",x=3,y=-2.4/6,label="n.s.") + #add note about n.s.difference from 0
-  ggsave(file="Plots/Exp1TrainingToRecall1Change.pdf",width=4, height=4)
-```
 
-Plot for Recall 1 to Interaction Block 2 - again, the statistics indicate no difference between conditions but a significant difference between participants, so we will plot collapsing across conditions.
+### Stats for probability matching (change from Training to Recall 1)
 
-```{r}
-ggplot(data=subset(exp1.change.data.for.plotting.combined,BlockToBlock=="Recall 1 to Interaction Block 2"), aes(x=Participant, y=Change, fill=Participant)) +
-  theme_bw() + 
-  geom_boxplot() +
-  scale_fill_manual(values=c(my.colours[2],my.colours[1],my.colours[3])) +
-  scale_y_continuous(limits = c(-1,1.1),breaks=seq(-1,1,1/3),labels=c("-1","-2/3","-1/3","0","+1/3","+2/3","+1")) +
-  ylab("Change") + 
-  theme(axis.title.x = element_blank()) +
-  theme(legend.position="none") + 
-  ggtitle("Recall 1 To Interaction Block 2")
-```
-
-```{r include=FALSE}
-#Plot for paper - strip out axis labels since these are provides elsewhere, add annotations
-ggplot(data=subset(exp1.change.data.for.plotting.combined,BlockToBlock=="Recall 1 to Interaction Block 2"), aes(x=Participant, y=Change, fill=Participant)) +
-  theme_bw() + 
-  geom_boxplot() +
-  scale_fill_manual(values=c(my.colours[2],my.colours[1],my.colours[3])) +
-  scale_y_continuous(limits = c(-1,1.1),breaks=seq(-1,1,1/3),labels=c("-1","-2/3","-1/3","0","+1/3","+2/3","+1")) +
-  ylab("Change") + 
-  theme(axis.title.x = element_blank()) +
-  theme(axis.title.y = element_blank()) +
-  theme(axis.ticks = element_blank(), axis.text.y = element_blank()) + 
-  theme(legend.position="none") + 
-  ggtitle("Recall 1 To Interaction Block 2") +
-  annotate("text",x=1.5,y=1.1,label="**") + #signficant difference between ps
-  geom_segment(aes(x=1, y=1.1, xend=1.4, yend=1.1)) + geom_segment(aes(x=1.6, y=1.1, xend=2, yend=1.1)) + #add lines either side of text
-  annotate("text",x=0.8,y=1/6,label="***") + #add note about difference from 0 for P1s
-  annotate("text",x=1.8,y=1/6,label="n.s.") + #add note about difference from 0 for P2s
-  annotate("text",x=2.8,y=1/6,label="**") + #add note about difference from 0 overall
-  ggsave(file="Plots/Exp1Recall1ToInteraction2Change.pdf",width=4, height=4)
-```
-
-Plot for Recall 1 to Recall 2 - again, collapsing across conditions here.
-```{r}
-ggplot(data=subset(exp1.change.data.for.plotting.combined,BlockToBlock=="Recall 1 to Recall 2"), aes(x=Participant, y=Change, fill=Participant)) +
-  theme_bw() + 
-  geom_boxplot() +
-  scale_fill_manual(values=c(my.colours[2],my.colours[1],my.colours[3])) +
-  scale_y_continuous(limits = c(-1,1.1),breaks=seq(-1,1,1/3),labels=c("-1","-2/3","-1/3","0","+1/3","+2/3","+1")) +
-  ylab("Change") + 
-  theme(axis.title.x = element_blank()) +
-  theme(legend.position="none") + 
-  ggtitle("Recall 1 To Recall 2")
-
-```
-
-```{r include=FALSE}
-#Plot for paper - missing y axis title, annotations
-ggplot(data=subset(exp1.change.data.for.plotting.combined,BlockToBlock=="Recall 1 to Recall 2"), aes(x=Participant, y=Change, fill=Participant)) +
-  theme_bw() + 
-  geom_boxplot() +
-  scale_fill_manual(values=c(my.colours[2],my.colours[1],my.colours[3])) +
-  scale_y_continuous(limits = c(-1,1.1),breaks=seq(-1,1,1/3),labels=c("-1","-2/3","-1/3","0","+1/3","+2/3","+1")) +
-  theme(axis.title.x = element_blank()) +
-  theme(legend.position="none") + 
-  theme(axis.title.y = element_blank()) +
-  theme(axis.ticks = element_blank(), axis.text.y = element_blank()) + 
-  ggtitle("Recall 1 To Recall 2") +
-  annotate("text",x=1.5,y=1.1,label="p=.064") + #marginal difference between ps
-  geom_segment(aes(x=1, y=1.1, xend=1.2, yend=1.1)) + geom_segment(aes(x=1.8, y=1.1, xend=2, yend=1.1)) + #add lines either side of text
-  annotate("text",x=1,y=5/6,label="**") + #add note about difference from 0 for P1s
-  annotate("text",x=2,y=5/6,label="n.s.") + #add note about difference from 0 for P2s
-  annotate("text",x=3,y=5/6,label="**") + #add note about difference from 0 overall
-  ggsave(file="Plots/Exp1Recall1ToRecall2Change.pdf",width=4, height=4)
-
-```
-
-## Stats for probability matching (change from Training to Recall 1)
-
-Q1a: do the conditions differ in change from trainign to recall 1? **Answer is no**.
+Q1a: do the conditions differ in change from trainign to recall 1? **No significant difference**.
 
 ```{r}
 wilcox.test(subset(exp1.change.data,Condition=="Condition: 66-33")$ChangeTrainingRecall1, 
             subset(exp1.change.data,Condition=="Condition: 83-17")$ChangeTrainingRecall1) 
 ```
 
-Q1b: do the Ps differ in accuracy?. **Answer is yes**.
+Q1b: do the Ps differ in accuracy?. **Yes**.
 
 ```{r}
 wilcox.test(subset(exp1.change.data,Participant=="P1")$ChangeTrainingRecall1, 
@@ -371,12 +307,12 @@ wilcox.test(subset(exp1.change.data,Participant=="P1")$ChangeTrainingRecall1,
 ```
 
 
-Q2: Does the change from training differ from 0? Doing this for all data, since the initial test suggests no difference between conditions. **Answer is no**.
+Q2a: Does the change from training differ from 0? Doing this for all data, since the initial test suggests no difference between conditions. **No significant difference**.
 ```{r}
 wilcox.test(exp1.change.data$ChangeTrainingRecall1) 
 ```
 
-Q2a: since the effect of P was significant, better test P1 and P2 seperately
+Q2b: since the effect of P was significant, testing P1 and P2 seperately
 
 Some evidence for a significant shift in both (marginal for P1s, clearer in P2s).
 
@@ -385,9 +321,58 @@ wilcox.test(subset(exp1.change.data,Participant=="P1")$ChangeTrainingRecall1)
 wilcox.test(subset(exp1.change.data,Participant=="P2")$ChangeTrainingRecall1)
 ```
 
-## Stats for change in use due to interaction (change from Recall 1 to Interaction 2)
+A reviewer asked for all statistics to be run on each condition seperately, even in the absence of differences between condition. 
 
-Q1a: do the conditions differ in change from recall 1 to interaction 2? **No**. 
+Q3a: do the Ps differ in amount of change? **No significant difference in the 100-66 condition, significant difference in the 83-17 condition**. This suggests probability-matching in the 66-33 condition, and stronger regularisation effects in the conditions with the more extreme input values, i.e. the 83-17 condition. 
+
+```{r}
+wilcox.test(subset(exp1.change.data,Condition=="Condition: 66-33" & Participant=="P1")$ChangeTrainingRecall1, 
+            subset(exp1.change.data,Condition=="Condition: 66-33" & Participant=="P2")$ChangeTrainingRecall1) 
+wilcox.test(subset(exp1.change.data,Condition=="Condition: 83-17" & Participant=="P1")$ChangeTrainingRecall1, 
+            subset(exp1.change.data,Condition=="Condition: 83-17" & Participant=="P2")$ChangeTrainingRecall1) 
+
+```
+
+Q3b: Does the change from training differ from 0? **n.s. for both conditions when considered independently**.
+```{r}
+wilcox.test(subset(exp1.change.data,Condition=="Condition: 66-33")$ChangeTrainingRecall1) 
+wilcox.test(subset(exp1.change.data,Condition=="Condition: 83-17")$ChangeTrainingRecall1) 
+```
+
+Q3c: Testing P1 and P2 seperately for each condition. **No significant effects for P1 and P2 in the 66-33 condition.  For the 83-17 condition there is no significant difference for the P1s, but a significant difference for the P2s, i.e. they are pulled significantly downwards**. 
+
+
+```{r}
+wilcox.test(subset(exp1.change.data,Condition=="Condition: 66-33" & Participant=="P1")$ChangeTrainingRecall1)
+wilcox.test(subset(exp1.change.data,Condition=="Condition: 66-33" & Participant=="P2")$ChangeTrainingRecall1)
+
+wilcox.test(subset(exp1.change.data,Condition=="Condition: 83-17" & Participant=="P1")$ChangeTrainingRecall1)
+wilcox.test(subset(exp1.change.data,Condition=="Condition: 83-17" & Participant=="P2")$ChangeTrainingRecall1)
+```
+
+## Plots and stats for change in use due to interaction (change from Recall 1 to Interaction 2)
+
+### Plot of change from Recall 1 to Interaction Block 2.
+
+```{r}
+ggplot(data=subset(exp1.change.data.for.plotting.combined,BlockToBlock=="Recall 1 to Interaction Block 2"), aes(x=Participant, y=Change, fill=Participant)) +
+  theme_bw() + 
+  facet_grid(.~Condition) +
+  geom_boxplot() +
+  scale_fill_manual(values=c(my.colours[2],my.colours[1],my.colours[3])) +
+  scale_y_continuous(limits = c(-1,1.1),breaks=seq(-1,1,1/3),labels=c("-1","-2/3","-1/3","0","+1/3","+2/3","+1")) +
+  ylab("Change") + 
+  theme(axis.title.x = element_blank()) +
+  theme(legend.position="none") + 
+  ggtitle("Recall 1 To Interaction Block 2") 
+```
+
+
+
+
+### Stats for effect of interaction
+
+Q1a: do the conditions differ in change from recall 1 to interaction 2? **No significant difference**. 
 
 ```{r}
 wilcox.test(subset(exp1.change.data,Condition=="Condition: 66-33")$ChangeRecall1Interaction2, 
@@ -420,11 +405,60 @@ wilcox.test(subset(exp1.change.data,Participant=="P1")$ChangeRecall1Interaction2
 wilcox.test(subset(exp1.change.data,Participant=="P2")$ChangeRecall1Interaction2) 
 ```
 
-## Stats for change from pre-interaction Recall 1 to post-interaction Recall 2
+As per the reviewer request, also analysing each condition separately. 
+
+Q3a: do the Ps differ? **Marginally so for both conditions**. 
+
+```{r}
+wilcox.test(subset(exp1.change.data,Condition=="Condition: 66-33" & Participant=="P1")$ChangeRecall1Interaction2, 
+            subset(exp1.change.data,Condition=="Condition: 66-33" & Participant=="P2")$ChangeRecall1Interaction2) 
+
+wilcox.test(subset(exp1.change.data,Condition=="Condition: 83-17" & Participant=="P1")$ChangeRecall1Interaction2, 
+            subset(exp1.change.data,Condition=="Condition: 83-17" & Participant=="P2")$ChangeRecall1Interaction2) 
+```
+
+Q3b: does the overall change from Recall 1 to Interaction 2 differs from 0 in each condition seperately. **Change is significantly different from 0 in the 66-33 condition, and marginal in the 83-17 condition**.
+
+```{r}
+wilcox.test(subset(exp1.change.data,Condition=="Condition: 66-33")$ChangeRecall1Interaction2)
+wilcox.test(subset(exp1.change.data,Condition=="Condition: 83-17")$ChangeRecall1Interaction2)
+```
+
+Q3b: And testing this seperately for P1 and P2 in each condition. **In both conditions, P1s show an effect, P2s do not.**
+
+```{r}
+wilcox.test(subset(exp1.change.data,Condition=="Condition: 66-33" & Participant=="P1")$ChangeRecall1Interaction2)
+wilcox.test(subset(exp1.change.data,Condition=="Condition: 66-33" & Participant=="P2")$ChangeRecall1Interaction2) 
+
+wilcox.test(subset(exp1.change.data,Condition=="Condition: 83-17" & Participant=="P1")$ChangeRecall1Interaction2)
+wilcox.test(subset(exp1.change.data,Condition=="Condition: 83-17" & Participant=="P2")$ChangeRecall1Interaction2) 
+```
+
+## Plots and stats for lasting effect of interaction (change from pre-interaction Recall 1 to post-interaction Recall 2)
+
+### Plot for Recall 1 to Recall 2.
+
+```{r}
+ggplot(data=subset(exp1.change.data.for.plotting.combined,BlockToBlock=="Recall 1 to Recall 2"), aes(x=Participant, y=Change, fill=Participant)) +
+  theme_bw() + 
+  facet_grid(.~Condition) +
+  geom_boxplot() +
+  scale_fill_manual(values=c(my.colours[2],my.colours[1],my.colours[3])) +
+  scale_y_continuous(limits = c(-1,1.1),breaks=seq(-1,1,1/3),labels=c("-1","-2/3","-1/3","0","+1/3","+2/3","+1")) +
+  ylab("Change") + 
+  theme(axis.title.x = element_blank()) +
+  theme(legend.position="none") + 
+  ggtitle("Recall 1 To Recall 2") 
+
+```
+
+
+
+### Stats for change from pre-interaction Recall 1 to post-interaction Recall 2
 
 This shows the lasting effect of interaction.
 
-Q1a: do the conditions differ in change from Recall 1 to Recall 2? **No**.
+Q1a: do the conditions differ in change from Recall 1 to Recall 2? **No significant difference**.
 
 ```{r}
 wilcox.test(subset(exp1.change.data,Condition=="Condition: 66-33")$ChangeRecall1Recall2, 
@@ -456,6 +490,418 @@ wilcox.test(subset(exp1.change.data,Participant=='P1')$ChangeRecall1Recall2)
 wilcox.test(subset(exp1.change.data,Participant=='P2')$ChangeRecall1Recall2) 
 
 ```
+
+And running these analyses separately by condition.
+
+Q3a: do the Ps differ in each condition considered separately? **n.s. for 66-33, significant for 83-17.**. 
+
+```{r}
+wilcox.test(subset(exp1.change.data,Condition=="Condition: 66-33" & Participant=="P1")$ChangeRecall1Recall2, 
+            subset(exp1.change.data,Condition=="Condition: 66-33" & Participant=="P2")$ChangeRecall1Recall2) 
+
+wilcox.test(subset(exp1.change.data,Condition=="Condition: 83-17" & Participant=="P1")$ChangeRecall1Recall2, 
+            subset(exp1.change.data,Condition=="Condition: 83-17" & Participant=="P2")$ChangeRecall1Recall2)
+```
+
+
+Q3a: Do the Ps differ in the amount of change? **No significant difference in the 66-33 condition, but a significant difference in the 83-17 condition.**
+
+```{r}
+wilcox.test(subset(exp1.change.data,Condition=="Condition: 66-33" & Participant=="P1")$ChangeRecall1Recall2, 
+            subset(exp1.change.data,Condition=="Condition: 66-33" & Participant=="P2")$ChangeRecall1Recall2) 
+
+wilcox.test(subset(exp1.change.data,Condition=="Condition: 83-17" & Participant=="P1")$ChangeRecall1Recall2, 
+            subset(exp1.change.data,Condition=="Condition: 83-17" & Participant=="P2")$ChangeRecall1Recall2) 
+```
+
+Q3b: does the change from Recall 1 to Recall 2 differ from 0? **No significant difference for the 66-33 condition, but a difference in the 83-17 condition**. 
+```{r}
+wilcox.test(subset(exp1.change.data,Condition=="Condition: 66-33")$ChangeRecall1Recall2) 
+wilcox.test(subset(exp1.change.data,Condition=="Condition: 83-17")$ChangeRecall1Recall2) 
+```
+
+Q3c: since the participants differed in amount of change, test them separately. 
+
+The effect is n.s. in both P1 and P2 in the 66-33 condition, i.e. no evidence of lasting change.
+
+In the 83-17 condition, P1s show an effect, P2s do not. 
+
+This is consistent with a small downwards adjustment in P1s that outlasts interaction, most prominent in cases where participants change the most, i.e. the P1s in the 83-17 condition. 
+
+```{r}
+wilcox.test(subset(exp1.change.data,Condition=="Condition: 66-33" & Participant=='P1')$ChangeRecall1Recall2) 
+wilcox.test(subset(exp1.change.data,Condition=="Condition: 66-33" & Participant=='P2')$ChangeRecall1Recall2) 
+
+wilcox.test(subset(exp1.change.data,Condition=="Condition: 83-17" & Participant=='P1')$ChangeRecall1Recall2) 
+wilcox.test(subset(exp1.change.data,Condition=="Condition: 83-17" & Participant=='P2')$ChangeRecall1Recall2) 
+```
+
+## Combined plot showing all three block-to-block changes
+
+```{r}
+ggplot(data=subset(exp1.change.data.for.plotting.combined,BlockToBlock%in% c("Training to Recall 1","Recall 1 to Interaction Block 2","Recall 1 to Recall 2")), aes(x=Participant, y=Change, fill=Participant)) +
+  theme_bw() + 
+  facet_grid(BlockToBlock~Condition) +
+  geom_boxplot() +
+  scale_fill_manual(values=c(my.colours[2],my.colours[1],my.colours[3])) +
+  scale_y_continuous(limits = c(-1,1.1),breaks=seq(-1,1,1/3),labels=c("-1","-2/3","-1/3","0","+1/3","+2/3","+1")) +
+  ylab("Change") + 
+  theme(axis.title.x = element_blank()) +
+  theme(legend.position="none")
+```
+
+```{r include=FALSE}
+#for paper - includes annotations for statistical significance.
+
+#Because of the way ggplot handles annotations on multi-facet plots, need to specify the annotations and lines in dataframes of their own!
+
+###differences between conditions/participants (plotted with horizontal lines)
+##annotations for significance - Training to Recall 1
+#both conditions combined
+condition.annotations.1 <- data.frame(BlockToBlock="Training to Recall 1",
+                                      Condition="Both Conditions",
+                                      Participant=NA,
+                                      x=1.5, #positions for stars
+                                      y=1.09, 
+                                      note="**"
+                                      )
+#66-33 - no difference between participants
+# condition.annotations.2 <- data.frame(BlockToBlock="Training to Recall 1",
+#                                       Condition="Condition: 66-33",
+#                                       Participant=NA,
+#                                       x=1.5, #positions for stars
+#                                       y=1.09, 
+#                                       note="n.s"
+#                                       )
+
+#83-17 
+condition.annotations.3 <- data.frame(BlockToBlock="Training to Recall 1",
+                                      Condition="Condition: 83-17",
+                                      Participant=NA,
+                                      x=1.5, #positions for stars
+                                      y=1.09, 
+                                      note="**"
+                                      )
+
+##annotations for significance - Recall 1 to Interaction 2
+#both conditions combined
+condition.annotations.4 <- data.frame(BlockToBlock="Recall 1 to Interaction Block 2",
+                                      Condition="Both Conditions",
+                                      Participant=NA,
+                                      x=1.5, #positions for stars
+                                      y=1.1, 
+                                      note="**"
+                                      )
+
+#66-33
+condition.annotations.5 <- data.frame(BlockToBlock="Recall 1 to Interaction Block 2",
+                                      Condition="Condition: 66-33",
+                                      Participant=NA,
+                                      x=1.5, #positions for stars
+                                      y=1.1, 
+                                      note="p=.082"
+                                      )
+
+#83-17
+condition.annotations.6 <- data.frame(BlockToBlock="Recall 1 to Interaction Block 2",
+                                      Condition="Condition: 83-17",
+                                      Participant=NA,
+                                      x=1.5, #positions for stars
+                                      y=1.1, 
+                                      note="p=.057"
+                                      )
+
+
+
+#annotations for significance - Recall 1 to Recall 2
+#both conditions combined
+condition.annotations.7 <- data.frame(BlockToBlock="Recall 1 to Recall 2",
+                                      Condition="Both Conditions",
+                                      Participant=NA,
+                                      x=1.5, #positions for stars
+                                      y=1.1, 
+                                      note="p=.064"
+                                      )
+
+#66-33 - no difference
+# condition.annotations.8 <- data.frame(BlockToBlock="Recall 1 to Recall 2",
+#                                       Condition="Condition: 66-33",
+#                                       Participant=NA,
+#                                       x=1.5, #positions for stars
+#                                       y=1.1, 
+#                                       note="n.s"
+#                                       )
+
+#83-17
+condition.annotations.9 <- data.frame(BlockToBlock="Recall 1 to Recall 2",
+                                      Condition="Condition: 83-17",
+                                      Participant=NA,
+                                      x=1.5, #positions for stars
+                                      y=1.1, 
+                                      note="*"
+                                      )
+
+
+
+condition.annotations <- rbind(condition.annotations.1,
+                               #condition.annotations.2,
+                               condition.annotations.3,
+                               condition.annotations.4,
+                               condition.annotations.5,
+                               condition.annotations.6,
+                               condition.annotations.7,
+                               #condition.annotations.8,
+                               condition.annotations.9
+                               )
+
+#positions for lines
+                                      
+condition.annotations.lines.1a <- data.frame(BlockToBlock="Training to Recall 1",
+                                      Condition="Both Conditions",
+                                      Participant=NA,
+                                      x=1, y=1.1, xend=1.3, yend=1.1)
+condition.annotations.lines.1b <- data.frame(BlockToBlock="Training to Recall 1",
+                                      Condition="Both Conditions",
+                                      Participant=NA,
+                                      x=1.7, y=1.1, xend=2, yend=1.1)
+
+condition.annotations.lines.3a <- data.frame(BlockToBlock="Training to Recall 1",
+                                      Condition="Condition: 83-17",
+                                      Participant=NA,
+                                      x=1, y=1.1, xend=1.3, yend=1.1)
+condition.annotations.lines.3b <- data.frame(BlockToBlock="Training to Recall 1",
+                                      Condition="Condition: 83-17",
+                                      Participant=NA,
+                                      x=1.7, y=1.1, xend=2, yend=1.1)
+
+
+condition.annotations.lines.4a <- data.frame(BlockToBlock="Recall 1 to Interaction Block 2",
+                                      Condition="Both Conditions",
+                                      Participant=NA,
+                                      x=1, y=1.1, xend=1.3, yend=1.1)
+condition.annotations.lines.4b <- data.frame(BlockToBlock="Recall 1 to Interaction Block 2",
+                                      Condition="Both Conditions",
+                                      Participant=NA,
+                                      x=1.7, y=1.1, xend=2, yend=1.1)
+
+condition.annotations.lines.5a <- data.frame(BlockToBlock="Recall 1 to Interaction Block 2",
+                                      Condition="Condition: 66-33",
+                                      Participant=NA,
+                                      x=0.9, y=1.1, xend=1, yend=1.1)
+condition.annotations.lines.5b <- data.frame(BlockToBlock="Recall 1 to Interaction Block 2",
+                                      Condition="Condition: 66-33",
+                                      Participant=NA,
+                                      x=2, y=1.1, xend=2.1, yend=1.1)
+
+condition.annotations.lines.6a <- data.frame(BlockToBlock="Recall 1 to Interaction Block 2",
+                                      Condition="Condition: 83-17",
+                                      Participant=NA,
+                                      x=0.9, y=1.1, xend=1, yend=1.1)
+condition.annotations.lines.6b <- data.frame(BlockToBlock="Recall 1 to Interaction Block 2",
+                                      Condition="Condition: 83-17",
+                                      Participant=NA,
+                                      x=2, y=1.1, xend=2.1, yend=1.1)
+
+
+condition.annotations.lines.7a <- data.frame(BlockToBlock="Recall 1 to Recall 2",
+                                      Condition="Both Conditions",
+                                      Participant=NA,
+                                      x=0.9, y=1.1, xend=1, yend=1.1)
+condition.annotations.lines.7b <- data.frame(BlockToBlock="Recall 1 to Recall 2",
+                                      Condition="Both Conditions",
+                                      Participant=NA,
+                                      x=2, y=1.1, xend=2.1, yend=1.1)
+
+condition.annotations.lines.9a <- data.frame(BlockToBlock="Recall 1 to Recall 2",
+                                      Condition="Condition: 83-17",
+                                      Participant=NA,
+                                      x=1, y=1.1, xend=1.4, yend=1.1)
+condition.annotations.lines.9b <- data.frame(BlockToBlock="Recall 1 to Recall 2",
+                                      Condition="Condition: 83-17",
+                                      Participant=NA,
+                                      x=1.6, y=1.1, xend=2, yend=1.1)
+
+
+
+condition.annotations.lines <- rbind(condition.annotations.lines.1a,condition.annotations.lines.1b,
+                                     #condition.annotations.lines.2a,condition.annotations.lines.2b,
+                                     condition.annotations.lines.3a,condition.annotations.lines.3b,
+                                     condition.annotations.lines.4a,condition.annotations.lines.4b,
+                                     condition.annotations.lines.5a,condition.annotations.lines.5b,
+                                     condition.annotations.lines.6a,condition.annotations.lines.6b,
+                                     condition.annotations.lines.7a,condition.annotations.lines.7b,
+                                     #condition.annotations.lines.8a,condition.annotations.lines.8b,
+                                     condition.annotations.lines.9a,condition.annotations.lines.9b
+                                     )
+
+
+###differences from 0 (no lines)
+##annotations for significance - Training to Recall 1
+#both conditions combined
+baseline.annotations.1 <- data.frame(BlockToBlock="Training to Recall 1",
+                                      Condition="Both Conditions",
+                                      Participant="P1",
+                                     x=1,y=3/6,note="p=.051") #add note about n.s.difference from 0
+baseline.annotations.2 <- data.frame(BlockToBlock="Training to Recall 1",
+                                      Condition="Both Conditions",
+                                      Participant="P2",
+                                     x=2,y=-2.4/6,note="*")  #add note about n.s.difference from 0
+baseline.annotations.3 <- data.frame(BlockToBlock="Training to Recall 1",
+                                      Condition="Both Conditions",
+                                      Participant="Both Ps",
+                                     x=3,y=-2.4/6,note="n.s.") 
+#66-33
+baseline.annotations.4 <- data.frame(BlockToBlock="Training to Recall 1",
+                                      Condition="Condition: 66-33",
+                                      Participant="P1",
+                                     x=1,y=3/6,note="n.s.") 
+baseline.annotations.5 <- data.frame(BlockToBlock="Training to Recall 1",
+                                      Condition="Condition: 66-33",
+                                      Participant="P2",
+                                     x=2,y=-2.4/6,note="n.s.")  
+baseline.annotations.6 <- data.frame(BlockToBlock="Training to Recall 1",
+                                      Condition="Condition: 66-33",
+                                      Participant="Both Ps",
+                                     x=3,y=-2.4/6,note="n.s.") 
+
+#83-17 
+baseline.annotations.7 <- data.frame(BlockToBlock="Training to Recall 1",
+                                      Condition="Condition: 83-17",
+                                      Participant="P1",
+                                     x=1,y=3/6,note="n.s.") 
+baseline.annotations.8 <- data.frame(BlockToBlock="Training to Recall 1",
+                                      Condition="Condition: 83-17",
+                                      Participant="P2",
+                                     x=2,y=0.5/6,note="**")  
+baseline.annotations.9 <- data.frame(BlockToBlock="Training to Recall 1",
+                                      Condition="Condition: 83-17",
+                                      Participant="Both Ps",
+                                     x=3,y=-2.4/6,note="n.s.") 
+
+
+##annotations for significance - Recall 1 to Interaction 2
+#both conditions combined
+baseline.annotations.10 <- data.frame(BlockToBlock="Recall 1 to Interaction Block 2",
+                                      Condition="Both Conditions",
+                                      Participant="P1",
+                                     x=0.8,y=1/6,note="***") #add note about n.s.difference from 0
+baseline.annotations.11 <- data.frame(BlockToBlock="Recall 1 to Interaction Block 2",
+                                      Condition="Both Conditions",
+                                      Participant="P2",
+                                     x=1.8,y=1/6,note="n.s.")  #add note about n.s.difference from 0
+baseline.annotations.12 <- data.frame(BlockToBlock="Recall 1 to Interaction Block 2",
+                                      Condition="Both Conditions",
+                                      Participant="Both Ps",
+                                     x=2.8,y=1/6,note="**") #add note about n.s.difference from 0
+
+#66-33
+baseline.annotations.13 <- data.frame(BlockToBlock="Recall 1 to Interaction Block 2",
+                                      Condition="Condition: 66-33",
+                                      Participant="P1",
+                                     x=1,y=1/6,note="**") 
+baseline.annotations.14 <- data.frame(BlockToBlock="Recall 1 to Interaction Block 2",
+                                      Condition="Condition: 66-33",
+                                      Participant="P2",
+                                     x=1.8,y=1/6,note="n.s.")  
+baseline.annotations.15 <- data.frame(BlockToBlock="Recall 1 to Interaction Block 2",
+                                      Condition="Condition: 66-33",
+                                      Participant="Both Ps",
+                                     x=2.8,y=1/6,note="*") #add note about n.s.difference from 0
+
+#83-17
+baseline.annotations.16 <- data.frame(BlockToBlock="Recall 1 to Interaction Block 2",
+                                      Condition="Condition: 83-17",
+                                      Participant="P1",
+                                     x=0.8,y=1/6,note="**") 
+baseline.annotations.17 <- data.frame(BlockToBlock="Recall 1 to Interaction Block 2",
+                                      Condition="Condition: 83-17",
+                                      Participant="P2",
+                                     x=1.8,y=1/6,note="n.s.")  #add note about n.s.difference from 0
+baseline.annotations.18 <- data.frame(BlockToBlock="Recall 1 to Interaction Block 2",
+                                      Condition="Condition: 83-17",
+                                      Participant="Both Ps",
+                                     x=2.8,y=1/6,note="#") #add note about n.s.difference from 0
+
+##annotations for significance - Recall 1 to Recall 2
+#both conditions combined
+baseline.annotations.19 <- data.frame(BlockToBlock="Recall 1 to Recall 2",
+                                      Condition="Both Conditions",
+                                      Participant="P1",
+                                     x=0.8,y=0.5/6,note="**") #add note about n.s.difference from 0
+baseline.annotations.20 <- data.frame(BlockToBlock="Recall 1 to Recall 2",
+                                      Condition="Both Conditions",
+                                      Participant="P2",
+                                     x=2,y=5/6,note="n.s.")  #add note about n.s.difference from 0
+baseline.annotations.21 <- data.frame(BlockToBlock="Recall 1 to Recall 2",
+                                      Condition="Both Conditions",
+                                      Participant="Both Ps",
+                                     x=2.8,y=0.5/6,note="**") #add note about n.s.difference from 0
+
+#66-33
+baseline.annotations.22 <- data.frame(BlockToBlock="Recall 1 to Recall 2",
+                                      Condition="Condition: 66-33",
+                                      Participant="P1",
+                                     x=1,y=5/6,note="n.s.") #add note about n.s.difference from 0
+baseline.annotations.23 <- data.frame(BlockToBlock="Recall 1 to Recall 2",
+                                      Condition="Condition: 66-33",
+                                      Participant="P2",
+                                     x=2,y=5/6,note="n.s.")  #add note about n.s.difference from 0
+baseline.annotations.24 <- data.frame(BlockToBlock="Recall 1 to Recall 2",
+                                      Condition="Condition: 66-33",
+                                      Participant="Both Ps",
+                                     x=3,y=5/6,note="n.s.") #add note about n.s.difference from 0
+
+#83-17
+baseline.annotations.25 <- data.frame(BlockToBlock="Recall 1 to Recall 2",
+                                      Condition="Condition: 83-17",
+                                      Participant="P1",
+                                     x=1,y=0.5/6,note="**") 
+baseline.annotations.26 <- data.frame(BlockToBlock="Recall 1 to Recall 2",
+                                      Condition="Condition: 83-17",
+                                      Participant="P2",
+                                     x=2,y=5/6,note="n.s.")  
+baseline.annotations.27 <- data.frame(BlockToBlock="Recall 1 to Recall 2",
+                                      Condition="Condition: 83-17",
+                                      Participant="Both Ps",
+                                     x=2.8,y=0.5/6,note="*") 
+
+
+  
+
+baseline.annotations <- rbind(baseline.annotations.1,baseline.annotations.2,baseline.annotations.3,
+                              baseline.annotations.4,baseline.annotations.5,baseline.annotations.6,
+                              baseline.annotations.7,baseline.annotations.8,baseline.annotations.9,
+                              baseline.annotations.10,baseline.annotations.11,baseline.annotations.12,
+                              baseline.annotations.13,baseline.annotations.14,baseline.annotations.15,
+                              baseline.annotations.16,baseline.annotations.17,baseline.annotations.18,
+                              baseline.annotations.19,baseline.annotations.20,baseline.annotations.21,
+                              baseline.annotations.22,baseline.annotations.23,baseline.annotations.24,
+                              baseline.annotations.25,baseline.annotations.26,baseline.annotations.27)
+#removing annotation of n.s. differences from 0, since there are a lot of these and they clutter the plot
+baseline.annotations <- subset(baseline.annotations,note!="n.s.")
+
+
+
+
+ggplot(data=subset(exp1.change.data.for.plotting.combined,BlockToBlock%in% c("Training to Recall 1","Recall 1 to Interaction Block 2","Recall 1 to Recall 2")), aes(x=Participant, y=Change, fill=Participant)) +
+  theme_bw() + 
+  facet_grid(BlockToBlock~Condition) +
+  geom_boxplot() +
+  scale_fill_manual(values=c(my.colours[3],my.colours[2],my.colours[1])) +
+  scale_y_continuous(limits = c(-1,1.1),breaks=seq(-1,1,1/3),labels=c("-1","-2/3","-1/3","0","+1/3","+2/3","+1")) +
+  ylab("Change") + 
+  theme(axis.title.x = element_blank()) +
+  theme(legend.position="none") + 
+  
+  geom_text(data=condition.annotations,aes(x=x,y=y,label=note)) +
+  geom_segment(data=condition.annotations.lines,aes(x=x,y=y,xend=xend,yend=yend)) +
+  geom_text(data=baseline.annotations,aes(x=x,y=y,label=note)) +
+  
+  ggsave(file="Plots/Exp1AllChanges.pdf",width=6, height=8)
+
+
+```
+
 
 # Plot within-pair differences and do statistics over these
 
@@ -505,7 +951,7 @@ ggplot(data=exp1.diffs, aes(x=BlockNewlines, y=Difference, fill=Condition,ymin=0
 ```
 
 
-## Plots showing change in within-pair differences
+## Plots and stats on change in within-pair differences
 
 Also useful to show the change in within-pair differences over time.
 
@@ -532,16 +978,22 @@ exp1.diffs.change.data.for.plotting$BlockToBlock <- plyr::revalue(exp1.diffs.cha
                                                      "ChangeRecall1Interaction2"="Recall 1 to Interaction Block 2",
                                                      "ChangeRecall1Recall2"="Recall 1 to Recall 2"))
 
-#Now duplicate data and add in "All Experiment 1 data", with all the data from both conditions, not seperated by Participant
-exp1.diffs.change.data.for.plotting.combined <- exp1.diffs.change.data.for.plotting
-exp1.diffs.change.data.for.plotting.combined$Condition <- "Both\nconditions"
+#Now duplicate data and add in "Both Conditions" version, with all the data from both conditions, not seperated by Participant
+exp1.diffs.change.data.for.plotting.Cscombined <- exp1.diffs.change.data.for.plotting
+exp1.diffs.change.data.for.plotting.Cscombined$Condition <- "Both\nConditions"
+exp1.diffs.change.data.for.plotting.combined <- rbind(exp1.diffs.change.data.for.plotting,exp1.diffs.change.data.for.plotting.Cscombined)
+
+#reorder levels
+#exp1.diffs.change.data.for.plotting.combined$Condition <- relevel(exp1.diffs.change.data.for.plotting.combined$Condition,ref="Both\nConditions")
 ```
+
+## Plots and stats for change in within-pair difference due to interaction (change from Recall 1 to Interaction 2)
+
+### Plots of change in within-pair difference from Recall 1 to Interaction 2
 
 ```{r}
 
-#For Recall 1 to Interaction 2 I want to plot the conditions seperately and combined
-ggplot(data=subset(rbind(exp1.diffs.change.data.for.plotting,
-                                                     exp1.diffs.change.data.for.plotting.combined),BlockToBlock=="Recall 1 to Interaction Block 2"), aes(x=Condition, y=DifferenceChange, fill=Condition)) +
+ggplot(data=subset(exp1.diffs.change.data.for.plotting.combined,BlockToBlock=="Recall 1 to Interaction Block 2"), aes(x=Condition, y=DifferenceChange, fill=Condition)) +
   theme_bw() + 
   geom_boxplot() +
   expand_limits(y=1) +
@@ -553,64 +1005,9 @@ ggplot(data=subset(rbind(exp1.diffs.change.data.for.plotting,
   ggtitle("Recall 1 to Interaction Block 2") 
 ```
 
-```{r include=FALSE}
-#Plot for paper
-ggplot(data=subset(rbind(exp1.diffs.change.data.for.plotting,
-                                                     exp1.diffs.change.data.for.plotting.combined),BlockToBlock=="Recall 1 to Interaction Block 2"), aes(x=Condition, y=DifferenceChange, fill=Condition)) +
-  theme_bw() + 
-  geom_boxplot() +
-  expand_limits(y=1) +
-  scale_fill_manual(values=c(my.colours[2],my.colours[1],my.colours[3])) +
-  scale_y_continuous(breaks=seq(-1,1,1/3),labels=c("-1","-2/3","-1/3","0","+1/3","+2/3","+1")) +
-  ylab("Change In Within-Pair Difference") + 
-  theme(axis.title.x = element_blank()) +
-  theme(legend.position="none") + 
-  ggtitle("Recall 1 to Interaction Block 2") +
-  annotate("text",x=1.5,y=5/6,label="p=.079") + #marginal difference between conditions
-  geom_segment(aes(x=1, y=5/6, xend=1.2, yend=5/6)) + geom_segment(aes(x=1.8, y=5/6, xend=2, yend=5/6)) + #add lines either side of text
-  annotate("text",x=1,y=1/3,label="***") + #add note about difference from 0 for P1s
-  annotate("text",x=2,y=1/3,label="***") + #add note about difference from 0 for P2s
-  annotate("text",x=3,y=1/3,label="***") + #add note about difference from 0 overall
-  ggsave(file="Plots/Exp1DiffChangeRecall1Interaction2.pdf",width=5, height=3)
-```
 
-```{r}
-#For Recall 1 to Recall 2 I want to plot both conditions combined only
 
-ggplot(data=subset(exp1.diffs.change.data.for.plotting.combined,BlockToBlock=="Recall 1 to Recall 2"), aes(x=Condition, y=DifferenceChange, fill=Condition)) +
-  theme_bw() + 
-  geom_boxplot() +
-  expand_limits(y=1) +
-  scale_fill_manual(values=c(my.colours[2],my.colours[1],my.colours[3])) +
-  scale_y_continuous(breaks=seq(-1,1,1/3),labels=c("-1","-2/3","-1/3","0","+1/3","+2/3","+1")) +
-  ylab("Change In Within-Pair Difference") + 
-  theme(axis.title.x = element_blank()) +
-  #theme(strip.text.y = element_blank()) + 
-  theme(legend.position="none",plot.title = element_text(size=12,hjust=0.5)) + 
-  ggtitle("Recall 1 to Recall 2")
-```
 
-```{r, include=FALSE}
-#Plot for paper -0 no y axis text, annotations
-
-ggplot(data=subset(exp1.diffs.change.data.for.plotting.combined,BlockToBlock=="Recall 1 to Recall 2"), aes(x=Condition, y=DifferenceChange, fill=Condition)) +
-  theme_bw() + 
-  geom_boxplot() +
-  expand_limits(y=1) +
-  scale_fill_manual(values=c(my.colours[2],my.colours[1],my.colours[3])) +
-  scale_y_continuous(breaks=seq(-1,1,1/3),labels=c("-1","-2/3","-1/3","0","+1/3","+2/3","+1")) +
-  ylab("Change In Within-Pair Difference") + 
-  theme(axis.title.x = element_blank()) +
-  #theme(strip.text.y = element_blank()) + 
-  theme(legend.position="none",plot.title = element_text(size=12,hjust=0.5)) + 
-  theme(axis.title.y = element_blank()) +
-  theme(axis.ticks = element_blank(), axis.text.y = element_blank()) + 
-  ggtitle("Recall 1 to Recall 2") +
-  annotate("text",x=1,y=5.5/6,label="**") + #add note about difference from 0 for P1s
-  ggsave(file="Plots/Exp1DiffChangeRecall1Recall2.pdf",width=5*(.24/.74), height=3)
-```
-
-## Stats for change in within-pair difference due to interaction (change from Recall 1 to interaction 2)
 
 Q1: do the conditions differ in change from recall 1 to interaction 2? **Marginally**. 
 ```{r}
@@ -618,7 +1015,7 @@ wilcox.test(subset(exp1.diffs.change.data,Condition=="Condition: 66-33")$ChangeR
             subset(exp1.diffs.change.data,Condition=="Condition: 83-17")$ChangeRecall1Interaction2) 
 ```
 
-Q2a: do the change from recall 1 to interaction 2 differ from 0? **Yes**. 
+Q2a: does the change from recall 1 to interaction 2 differ from 0? **Yes**. 
 
 ```{r}
 wilcox.test(exp1.diffs.change.data$ChangeRecall1Interaction2) 
@@ -635,11 +1032,33 @@ wilcox.test(subset(exp1.diffs.change.data,Condition=="Condition: 66-33")$ChangeR
 wilcox.test(subset(exp1.diffs.change.data,Condition=="Condition: 83-17")$ChangeRecall1Interaction2) 
 ```
 
-## Stats for change in within-pair difference from Recall 1 to Recall 2
+
+## Plots and stats for lasting effect of interaction on within-pair distance (change from recall 1 to recall 2)
+
+
+### Plot of change in within-pair difference for recall 1 to recall 2. 
+
+```{r}
+
+ggplot(data=subset(exp1.diffs.change.data.for.plotting.combined,BlockToBlock=="Recall 1 to Recall 2"), aes(x=Condition, y=DifferenceChange, fill=Condition)) +
+  theme_bw() + 
+  geom_boxplot() +
+  expand_limits(y=1) +
+  scale_fill_manual(values=c(my.colours[2],my.colours[1],my.colours[3])) +
+  scale_y_continuous(breaks=seq(-1,1,1/3),labels=c("-1","-2/3","-1/3","0","+1/3","+2/3","+1")) +
+  ylab("Change In Within-Pair Difference") + 
+  theme(axis.title.x = element_blank()) +
+  #theme(strip.text.y = element_blank()) + 
+  theme(legend.position="none",plot.title = element_text(size=12,hjust=0.5)) + 
+  ggtitle("Recall 1 to Recall 2")
+```
+
+
+### Stats for change in within-pair difference from Recall 1 to Recall 2
 
 This is another way of measuring lasting alignment.
 
-Q1: do the conditions differ in change from recall 1 to recall 2? **No**.
+Q1: do the conditions differ in change from recall 1 to recall 2? **No significant difference**.
 
 ```{r}
 wilcox.test(subset(exp1.diffs.change.data,Condition=="Condition: 66-33")$ChangeRecall1Recall2, 
@@ -651,6 +1070,138 @@ Q2: does the change from recall 1 to recall 2 differ from 0? **Yes**.
 ```{r}
 wilcox.test(exp1.diffs.change.data$ChangeRecall1Recall2) 
 ```
+
+Q3: As per reviewer request, check this per condition. **Effect is significant for 66-33, n.s. for 83-17.** 
+
+```{r}
+wilcox.test(subset(exp1.diffs.change.data,Condition=="Condition: 66-33")$ChangeRecall1Recall2) 
+wilcox.test(subset(exp1.diffs.change.data,Condition=="Condition: 83-17")$ChangeRecall1Recall2) 
+```
+
+## Combined plot showing change in within-pair difference
+
+The most consistent way to show the change in within-pair difference from recall 1 to interaction 2 *and* recall 1 to recall 2 is a combined plot, using facet labels to identify the block.
+
+```{r}
+#For this plot I need to use the shortened condition names to avoid problems with font size or the x-axis.
+exp1.diffs.change.data.for.plotting.combined$ShortCondition <- plyr::revalue(exp1.diffs.change.data.for.plotting.combined$Condition,
+                                                                       c("Condition: 66-33"="66-33",
+                                                                         "Condition: 83-17"="83-17"))
+ggplot(data=subset(exp1.diffs.change.data.for.plotting.combined,BlockToBlock %in% c("Recall 1 to Interaction Block 2","Recall 1 to Recall 2")), aes(x=ShortCondition, y=DifferenceChange, fill=ShortCondition)) +
+  theme_bw() + 
+  facet_grid(.~BlockToBlock) +
+  geom_boxplot() +
+  expand_limits(y=1) +
+  scale_fill_manual(values=c(my.colours[2],my.colours[1],my.colours[3])) +
+  scale_y_continuous(breaks=seq(-1,1,1/3),labels=c("-1","-2/3","-1/3","0","+1/3","+2/3","+1")) +
+  ylab("Change In Within-Pair Difference") + 
+  theme(axis.title.x = element_blank()) +
+  #theme(strip.text.y = element_blank()) + 
+  theme(legend.position="none",plot.title = element_text(size=12,hjust=0.5))
+```
+
+```{r include=FALSE}
+#And the same plot with annotations for the paper
+
+#As above, because the plot is facetted, need to create dataframes with various annotations then add
+
+###differences between conditions (plotted with horizontal lines)
+##annotations for significance - Recall 1 to interaction
+condition.annotations.1 <- data.frame(BlockToBlock="Recall 1 to Interaction Block 2",
+                                      ShortCondition=NA,
+                                      x=1.5, #positions for stars
+                                      y=1.09, 
+                                      note="p=.079"
+                                      )
+
+##annotations for significance - Recall 1 to recall 2 - this is n.s.
+# condition.annotations.2 <- data.frame(BlockToBlock="Recall 1 to Recall 2",
+#                                       ShortCondition=NA,
+#                                       x=1.5, #positions for stars
+#                                       y=1.09, 
+#                                       note="n.s."
+#                                       )
+
+
+
+
+condition.annotations <- rbind(condition.annotations.1
+                               #condition.annotations.2,
+                               )
+
+#positions for lines
+                                      
+condition.annotations.lines.1a <- data.frame(BlockToBlock="Recall 1 to Interaction Block 2",
+                                      ShortCondition=NA,
+                                      x=1, y=1.1, xend=1.1, yend=1.1)
+condition.annotations.lines.1b <- data.frame(BlockToBlock="Recall 1 to Interaction Block 2",
+                                      ShortCondition=NA,
+                                      x=1.9, y=1.1, xend=2, yend=1.1)
+
+condition.annotations.lines <- rbind(condition.annotations.lines.1a,condition.annotations.lines.1b
+                                     )
+
+
+###differences from 0 (no lines)
+##annotations for significance - Recall 1 to Interaction 2
+#66-33
+baseline.annotations.1 <- data.frame(BlockToBlock="Recall 1 to Interaction Block 2",
+                                      ShortCondition="66-33",
+                                     x=1,y=2/6,note="***") 
+
+#83-17
+baseline.annotations.2 <- data.frame(BlockToBlock="Recall 1 to Interaction Block 2",
+                                      ShortCondition="83-17",
+                                     x=2,y=2/6,note="***") 
+
+#both conditions combined
+baseline.annotations.3 <- data.frame(BlockToBlock="Recall 1 to Interaction Block 2",
+                                      ShortCondition="Both\nConditions",
+                                     x=3,y=2/6,note="***") 
+
+##annotations for significance - Recall 1 to Recall 2
+#66-33
+baseline.annotations.4 <- data.frame(BlockToBlock="Recall 1 to Recall 2",
+                                      ShortCondition="66-33",
+                                     x=0.8,y=1/6,note="*") 
+
+#83-17
+baseline.annotations.5 <- data.frame(BlockToBlock="Recall 1 to Recall 2",
+                                      ShortCondition="83-17",
+                                     x=1.8,y=1/6,note="n.s.") 
+
+#both conditions combined
+baseline.annotations.6 <- data.frame(BlockToBlock="Recall 1 to Recall 2",
+                                      ShortCondition="Both\nConditions",
+                                     x=2.8,y=1/6,note="**") 
+
+
+
+baseline.annotations <- rbind(baseline.annotations.1,baseline.annotations.2,baseline.annotations.3,
+                              baseline.annotations.4,baseline.annotations.5,baseline.annotations.6)
+#removing annotation of n.s. differences from 0, since there are a lot of these and they clutter the plot
+baseline.annotations <- subset(baseline.annotations,note!="n.s.")
+
+
+ggplot(data=subset(exp1.diffs.change.data.for.plotting.combined,BlockToBlock %in% c("Recall 1 to Interaction Block 2","Recall 1 to Recall 2")), aes(x=ShortCondition, y=DifferenceChange, fill=ShortCondition)) +
+  theme_bw() + 
+  facet_grid(.~BlockToBlock) +
+  geom_boxplot() +
+  expand_limits(y=1) +
+  scale_fill_manual(values=c(my.colours[2],my.colours[1],my.colours[3])) +
+  scale_y_continuous(breaks=seq(-1,1,1/3),labels=c("-1","-2/3","-1/3","0","+1/3","+2/3","+1")) +
+  ylab("Change In Within-Pair Difference") + 
+  theme(axis.title.x = element_blank()) +
+  theme(legend.position="none") +
+  
+  geom_text(data=condition.annotations,aes(x=x,y=y,label=note)) +
+  geom_segment(data=condition.annotations.lines,aes(x=x,y=y,xend=xend,yend=yend)) +
+  geom_text(data=baseline.annotations,aes(x=x,y=y,label=note)) +
+  ggsave(file="Plots/Exp1DiffChangeAll.pdf",width=5, height=3)
+```
+
+
+
 
 #Additional analysis requested by a reviewer
 
