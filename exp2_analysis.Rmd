@@ -1,7 +1,6 @@
 ---
 title: "Asymmetric alignment paper, Experiment 2 analysis and graphs"
 author: "Kenny Smith"
-date: "2nd May 2019"
 output: html_document
 ---
 
@@ -445,6 +444,16 @@ wilcox.test(subset(exp2.change.data,Condition=="Condition: 100-33" & Participant
 
 **100-33 condition: highly marginal/no effect for P1s, significant effect for P2s.**
 
+*Q3c*: How about comparing P1 and P2 across conditions - do P1s in both conditions show a similar (absence of) change, do P2s show a similar increase? 
+
+```{r}
+wilcox.test(subset(exp2.change.data,Condition=="Condition: 100-66" & Participant=="P1")$ChangeRecall1Interaction2, 
+            subset(exp2.change.data,Condition=="Condition: 100-33" & Participant=="P1")$ChangeRecall1Interaction2) 
+
+wilcox.test(subset(exp2.change.data,Condition=="Condition: 100-66" & Participant=="P2")$ChangeRecall1Interaction2, 
+            subset(exp2.change.data,Condition=="Condition: 100-33" & Participant=="P2")$ChangeRecall1Interaction2) 
+```
+**No significant difference for P1s, significant difference for P2s** - i.e. P2s change more in the 100-33 condition than the 100-66 condition.
 
 
 ## Plots and stats for lasting effect of interaction (change from Recall 1 to Recall 2)
@@ -466,16 +475,6 @@ ggplot(data=subset(exp2.change.data.for.plotting.combined,BlockToBlock=="Recall 
 
 ```
 
-*Q3c*: How about comparing P1 and P2 across conditions - do P1s in both conditions show a similar (absence of) change, do P2s show a similar increase? 
-
-```{r}
-wilcox.test(subset(exp2.change.data,Condition=="Condition: 100-66" & Participant=="P1")$ChangeRecall1Interaction2, 
-            subset(exp2.change.data,Condition=="Condition: 100-33" & Participant=="P1")$ChangeRecall1Interaction2) 
-
-wilcox.test(subset(exp2.change.data,Condition=="Condition: 100-66" & Participant=="P2")$ChangeRecall1Interaction2, 
-            subset(exp2.change.data,Condition=="Condition: 100-33" & Participant=="P2")$ChangeRecall1Interaction2) 
-```
-**No significant difference for P1s, significant difference for P2s** - i.e. P2s change more inthe 100-33 condition than the 100-33 condition.
 
 
 ### Stats for change from Recall 1 to Recall 2
@@ -576,7 +575,7 @@ length(variable.recall1.participants)
 wilcox.test(subset(exp2.change.data,ParticipantID %in% variable.recall1.participants)$ChangeRecall1Recall2)
 ```
 
-## Comnbined plot showing all three block-to-block changes.
+## Combined plot showing all three block-to-block changes.
 
 ```{r}
 ggplot(data=subset(exp2.change.data.for.plotting.combined,BlockToBlock%in% c("Training to Recall 1","Recall 1 to Interaction Block 2","Recall 1 to Recall 2")), aes(x=Participant, y=Change, fill=Participant)) +
@@ -964,9 +963,9 @@ wilcox.test(exp2.diffs.change.data$ChangeRecall1Interaction2)
 
 Q2b: do the same seperately, by condition.
 
-100-66 shows the effect. 
+**100-66 shows the effect.** 
 
-100-33 show the effect.
+**100-33 show the effect.**
 
 ```{r}
 wilcox.test(subset(exp2.diffs.change.data,grepl("100-66",Condition))$ChangeRecall1Interaction2)

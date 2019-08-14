@@ -1,7 +1,6 @@
 ---
 title: "Asymmetric alignment paper, Experiment 1 analysis and graphs"
 author: "Kenny Smith"
-date: "8th May 2019"
 output: html_document
 ---
 
@@ -274,7 +273,7 @@ exp1.change.data.for.plotting.combined$BlockToBlock <- factor(exp1.change.data.f
 
 ```
 
-These change values allow us to test whether P1 and P2 differ in the extent to which they change, and whether the conditions differ in the extent to which participants change. In order to test for interactions (i.e. do P1 and P2 differ in to the same extent in both conditions?) we calculate the difference between P1 and P2 within each pair (i.e. we take the P1 change in marker use, calculated above, and subtract the P2 change in marker use). We can then test for an interaction by comparing these difference scores across conditions - if P1 and P2 change to a similar extent in both conditions, then the P1-P2 difference scores will be similar across the two conditions; however, if P1 and P2 change to different extents across conditions, these P1-P2 difference scores will be different.
+These change values allow us to test whether P1 and P2 differ in the extent to which they change, and whether the conditions differ in the extent to which participants change. In order to test for interactions (i.e. do P1 and P2 differ to the same extent in both conditions?) we calculate the difference between P1 and P2 within each pair (i.e. we take the P1 change in marker use, calculated above, and subtract the P2 change in marker use). We can then test for an interaction by comparing these difference scores across conditions - if P1 and P2 change to a similar extent in both conditions, then the P1-P2 difference scores will be similar across the two conditions; however, if P1 and P2 change to different extents across conditions, these P1-P2 difference scores will be different.
 
 ```{r}
 #The most convenient way to calculate differences is to restructure the data to wide format, organised by pair.
@@ -492,9 +491,9 @@ wilcox.test(exp1.change.data$ChangeRecall1Interaction2)
 
 *Q2b*: Since the effect of Participant was significant, test this seperately for P1 and P2.
 
-P1 show an effect.
+**P1 show an effect.**
 
-P2 do not.
+**P2 do not.**
 
 This suggests that participant with the higher frequency of marker use in their training (the P1s) change more, and downwards, during interaction.
 

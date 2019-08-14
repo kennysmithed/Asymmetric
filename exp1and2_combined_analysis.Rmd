@@ -1,7 +1,6 @@
 ---
 title: "Asymmetric alignment paper, analysis and graphs on combined data"
 author: "Kenny Smith"
-date: "2nd May 2019"
 output: html_document
 ---
 
