@@ -1,0 +1,5 @@
+# Additional Data
+
+We collected demographic data (age and gender) for at least some participants in the course of running the experiment. That data is in demographics.csv. ParticipantID corresponds to the IDs in ProcessedData, age is in years. 
+
+After completing the main experiment, participants filled out a short personality questionnaire, the [Ten Item Personality Inventory](https://gosling.psy.utexas.edu/scales-weve-developed/ten-item-personality-measure-tipi/). Rather than enter a number, participants selected from a set of radio buttons for each option (one button per response option, i.e. one for "Disagree strongly", one for "Disagree moderately", etc). That data is in tipi.csv. ParticipantID corresponds to the IDs in ProcessedData. Please consult the TIPI documentation for scoring instructions.
